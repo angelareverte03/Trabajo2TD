@@ -1,0 +1,17 @@
+---
+title: "Trabajo 2"
+subtitle: "Elección club deportivo para practicar tenis"
+author: "Ángela Reverte Pagola"
+format:
+  html:
+    toc: true      
+    toc-depth: 3     
+    number-sections: true  
+editor: visual
+---
+
+# PRESENTACION DEL PROBLEMA.
+
+Mi pasión siempre han sido los deportes. He practicado muchos como: natación, baloncesto, tenis o fútbol sala. Este año, quiero volver a jugar al tenis y me encuentro emocionada. El problema es que tengo muchas opciones de clubes de tenis donde apuntarme y no sé qué hacer. 
+
+Para mí, el deporte es algo esencial en mi vida y, aunque no me quiero dedicar de forma profesional, me gusta mucho que los entrenamientos sean muy intensos y lo más profesionales posibles. Por otro lado, creo que el ambiente debe ser divertido y relajado. El tebi
