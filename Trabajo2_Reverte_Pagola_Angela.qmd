@@ -258,4 +258,110 @@ Viendo las tablas podemos sacar muchas conclusiones, por ejemplo:
 -   Se puede comprobar que todas las comparaciones tienen una inconsistencia de menos de un 10%, por lo que hemos valorado con buen criterio y sin muchas inconsistencias.
 
 
+## Resolución con Electre.
 
+En primer lugar creamos la matriz de decisión. Para ello, vamos a tratar los subcriterios como criterios y de esta forma veremos más fácil como aplicar este método.
+Vamos a darle estos valores a cada alternativa en cada criterio:
+
+- Familiaridad: como es algo subjetivo, voy a poner un porcentaje en función de mi propio criterio. (Maximizar) (Mantenemos distancias con porcentajes con respecto a la tabla AHP anterior)
+- Eventos deportivos: una media de cuántos torneos por mes. (Maximizar)
+- Pistas de tenis: nº de pistas de tenis. (Maximizar)
+- Instalaciones: valoración en porcentaje personal.(Maximizar)
+- Ubicación y accesibilidad: tiempo de trayecto (si es en coche, añadir 5 mins más por aparcamiento) (Minimizar)
+- Precio: Cuota mensual (euros). (Minimizar)
+- Entrenamientos: valoración en porcentaje personal. (Maximizar)
+
+Los de minimizar, los añadimos directamente con el menos.
+```{r}
+elec = multicriterio.crea.matrizdecision(
+  c(100, 4,  1,  50,  -5,  -45, 60,
+    75,  3,  4,  60,  -10, -55, 75,
+    50,  2,  16, 90,  -10, -60, 85,
+    25,  1,  6,  20,  -20, -70, 100),
+  numalternativas = 4,
+  numcriterios = 7
+)
+elec
+```
+Vamos a usar los pesos de los criterios que hemos obtenido con el AHP, para poder compararlos. Además, tiene sentido, pues yo soy la que le doy más importancia a uno o a otro criterio.
+
+Además, voy a usar para el test de discordancia los siguientes valores para las diferencias:
+
+- Eventos deportivos: si hay una diferencia de 5 eventos.
+- Pistas: si hay una diferencia de 10 pistas.
+- Ubicación y accesibilidad: si hay una diferencia de 15 minutos de trayecto.
+- Precio: si hay una diferencia mensual de 50 euros.
+
+```{r}
+solElec = multicriterio.metodoELECTRE_I(
+  elec,
+  pesos.criterios = crisub,
+  nivel.concordancia.minimo.alpha = 0.7,
+  no.se.compensan = c(Inf, 5, 10, Inf, 15,50,Inf),
+  que.alternativas = TRUE
+)
+
+#solElec
+
+qgraph::qgraph(solElec$relacion.dominante)
+
+solElec$nucleo_aprox
+```
+Viendo este grafo y viendo el núcleo obtenido, vamos a modificar el alpha para que nos quedemos solo con una alternativa. Es decir, ponemos más restrictivo el superar el test de concordancia.Y nos quedamos solo con las alternativas posibles: club Mirador y club Río Grande:
+
+```{r}
+solElec2 = multicriterio.metodoELECTRE_I(
+  elec,
+  pesos.criterios = crisub,
+  nivel.concordancia.minimo.alpha = 0.55,
+  no.se.compensan = c(Inf, 5, 10, Inf, 15,50,Inf),
+  que.alternativas = c(1,3)
+)
+
+#solElec2
+
+qgraph::qgraph(solElec2$relacion.dominante)
+
+solElec2$nucleo_aprox
+```
+Puesto que todavía no hemos llegado a ninguna solución, vamos a modificar también el test de discordancia. Como en realidad no necesito tantas pistas de tenis y, además, siempre tengo la opción de alquilarla en cualquier otro lugar, voy a modificar esa restricción. 
+
+```{r}
+solElec3 = multicriterio.metodoELECTRE_I(
+  elec,
+  pesos.criterios = crisub,
+  nivel.concordancia.minimo.alpha = 0.55,
+  no.se.compensan = c(Inf, 5, Inf, Inf, 15,50,Inf),
+  que.alternativas = c(1,3)
+)
+
+#solElec3
+
+qgraph::qgraph(solElec3$relacion.dominante)
+
+solElec3$nucleo_aprox
+```
+CONCLUSIÓN:
+
+Según el procedimiento de Electre también llegamos a la misma conclusión: quedarnos con la alternativa del club Mirador. Con los datos que le he proporcionado, ha sido complicada la elección entre las alternativas del club Mirador y del club Río Grande. Sin embargo, cambiando un poco las restricciones de los test de concordancia y discordancia en función de nuestro criterio y lógica, hemos podido concluir y tomar una decisión.
+
+Por otro lado, si queremos ver los pasos intermedios y las tablas de concordancia y discordancia, lo detallo a continuación. (Detallo solo con las restricciones finales)
+
+```{r}
+#Electre con todos los pasos:
+completo = func_ELECTRE_Completo(solElec3)
+
+#aqui las tablas de los índices:
+completo$MIndices$KE
+
+#tabla del test de concordancia:
+completo$TConcordancia$KE
+
+#tabla de discordancia:
+completo$TDiscordancia$KE
+
+#tabla de superacion de los dos test:
+completo$TSuperacion$KE
+```
+
+Con estas tablas podemos comprobar que el par (a1,a3) supera ambos tests (el de concordancia y el de discordancia), pero que el par (a3,a1) no supera el test de concordancia. Por ello, la alternativa 1 (club Mirador) supera a la alternativa 3 (club Río Grande)
