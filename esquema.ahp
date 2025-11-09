@@ -1,0 +1,102 @@
+Version: 2.0
+Alternatives: &alternatives
+  Club Mirador:
+  Club Bernier:
+  Club Río Grande:
+  Club Tenis Betis:
+Goal:
+  name: Elegir el club donde practicar tenis
+  preferences:
+    pairwise:
+      - [Ambiente, Servicios, 2]
+      - [Ambiente, Ubicación y accesibilidad, 1/3]
+      - [Ambiente, Precio, 5]
+      - [Ambiente, Entrenamientos, 3]
+      - [Servicios, Ubicación y accesibilidad, 1/4]
+      - [Servicios, Precio, 3]
+      - [Servicios, Entrenamientos, 1/2]
+      - [Ubicación y accesibilidad, Precio, 6]
+      - [Ubicación y accesibilidad, Entrenamientos, 2]
+      - [Precio,Entrenamientos, 1/7]
+  children:
+    Ambiente:
+      preferences:
+        pairwise:
+          - [Familiaridad, Eventos deportivos,2]
+      children: 
+        Familiaridad:
+          preferences:
+            pairwise:
+              - [Club Mirador,Club Bernier, 2]
+              - [Club Mirador,Club Río Grande, 4]
+              - [Club Mirador,Club Tenis Betis, 6]
+              - [Club Bernier,Club Río Grande, 2]
+              - [Club Bernier,Club Tenis Betis,4]
+              - [Club Río Grande, Club Tenis Betis, 2]
+          children: *alternatives
+        Eventos deportivos:
+          preferences:
+            pairwise:
+              - [Club Mirador,Club Bernier, 1/3]
+              - [Club Mirador,Club Río Grande, 1/5]
+              - [Club Mirador,Club Tenis Betis, 1/6]
+              - [Club Bernier,Club Río Grande, 1/3]
+              - [Club Bernier,Club Tenis Betis,1/5]
+              - [Club Río Grande, Club Tenis Betis, 1/3]
+          children: *alternatives
+        
+    Servicios:
+      preferences:
+        pairwise:
+          - [Pistas de tenis,Instalaciones,6]
+      children:
+        Pistas de tenis:
+          preferences:
+            pairwise:
+              - [Club Mirador,Club Bernier, 1/3]
+              - [Club Mirador,Club Río Grande, 1/9]
+              - [Club Mirador,Club Tenis Betis, 1/6]
+              - [Club Bernier,Club Río Grande, 1/7]
+              - [Club Bernier,Club Tenis Betis,1/2]
+              - [Club Río Grande, Club Tenis Betis, 6]
+          children: *alternatives
+        Instalaciones:
+          preferences:
+            pairwise:
+              - [Club Mirador,Club Bernier, 1/2]
+              - [Club Mirador,Club Río Grande, 1/5]
+              - [Club Mirador,Club Tenis Betis, 2]
+              - [Club Bernier,Club Río Grande, 1/3]
+              - [Club Bernier,Club Tenis Betis,2]
+              - [Club Río Grande, Club Tenis Betis, 4]
+          children: *alternatives
+    Ubicación y accesibilidad:
+      preferences:
+        pairwise:
+          - [Club Mirador,Club Bernier, 2]
+          - [Club Mirador,Club Río Grande, 5]
+          - [Club Mirador,Club Tenis Betis, 9]
+          - [Club Bernier,Club Río Grande, 3]
+          - [Club Bernier,Club Tenis Betis,8]
+          - [Club Río Grande, Club Tenis Betis, 7]
+      children: *alternatives
+    Precio:
+      preferences:
+        pairwise:
+          - [Club Mirador,Club Bernier, 3]
+          - [Club Mirador,Club Río Grande, 5]
+          - [Club Mirador,Club Tenis Betis, 6]
+          - [Club Bernier,Club Río Grande, 2]
+          - [Club Bernier,Club Tenis Betis,4]
+          - [Club Río Grande, Club Tenis Betis, 2]
+      children: *alternatives
+    Entrenamientos:
+      preferences:
+        pairwise:
+          - [Club Mirador,Club Bernier, 1/4]
+          - [Club Mirador,Club Río Grande, 1/5]
+          - [Club Mirador,Club Tenis Betis, 1/8]
+          - [Club Bernier,Club Río Grande, 1/3]
+          - [Club Bernier,Club Tenis Betis,1/6]
+          - [Club Río Grande, Club Tenis Betis, 1/3]
+      children: *alternatives

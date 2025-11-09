@@ -12,6 +12,250 @@ editor: visual
 
 # PRESENTACION DEL PROBLEMA.
 
-Mi pasión siempre han sido los deportes. He practicado muchos como: natación, baloncesto, tenis o fútbol sala. Este año, quiero volver a jugar al tenis y me encuentro emocionada. El problema es que tengo muchas opciones de clubes de tenis donde apuntarme y no sé qué hacer. 
+Mi pasión siempre han sido los deportes. He practicado muchos como: natación, baloncesto, tenis o fútbol sala. Este año, quiero volver a jugar al tenis y me encuentro emocionada. El problema es que tengo muchas opciones de clubes de tenis donde apuntarme y no sé qué hacer.
 
-Para mí, el deporte es algo esencial en mi vida y, aunque no me quiero dedicar de forma profesional, me gusta mucho que los entrenamientos sean muy intensos y lo más profesionales posibles. Por otro lado, creo que el ambiente debe ser divertido y relajado. El tebi
+Para mí, el deporte es algo esencial en mi vida y, aunque no me quiero dedicar de forma profesional, me gusta mucho que los entrenamientos sean muy intensos y lo más profesionales posibles. Sin embargo, creo que el ambiente debe ser divertido y relajado. Tan importante es hacer deporte serio como disfrutarlo y pasarlo bien.
+
+Por otro lado, durante el día estoy muy ajetreada, por lo que es importante no perder tiempo en el desplazamiento. Lo ideal sería que el club estuviera cerca de casa o, por lo menos, que tuviera fácil aparcamiento.
+
+En cuanto a lo económico, para mí no es tan importante. Los precios son todos parecidos, aunque sí es verdad que algunos incluyen más servicios que otros. De hecho, es importante destacar que no todos los clubes tienen las mismas instalaciones. A mi me encanta alquilar pistas con mi hermano y amigos para jugar. Y no todos los clubes tienen las mismas facilidades.
+
+Veamos ahora las diferentes alternativas y una breve presentación de ellas:
+
+-   Club Mirador: Club muy cercano a mi casa (5 mins andando). Es un club social y pequeño, pero muy familiar. Cuenta con una escuela de tenis que lleva este deporte también en otros clubes. Todos los monitores son profesionales y muy cercanos. El problema es que cuenta solo con una pista de tenis, por lo que, por un lado, las clases de tenis tienen un alto número de alumnos y, por otro, es dicícil reservarla, pues siempre está ocupada. Esta escuela de tenis se preocupa mucho por hacer eventos y torneos. Siempre con el objetivo de pasarlo bien. Es perfecta para tener el tenis como ocio. Es bastante económica.
+
+-   Club Bernier: aunque también es un club social, su objetivo principal es el tenis. Bastante profesional, pero sin perder de vista el ocio y el disfrute. Está también muy cerca de casa (10 mins andando). Cuenta con 4 pistas de tenis, gimnasio, pistas de padel y bar/restaurante. También realizan muchos partidos y torneos en los que te puedes poner a prueba como tenista. No es tan económico.
+
+-   Club de tenis Río Grande: club dedicado al tenis. Este club se dedica al tenis, aunque cuenta también con otros muchos servicios como piscina, sala fitness, pistas de padel o campos de fútbol. Es un club muy grande, con 16 pistas de tenis, de las cuales 12 son de tierra batida y en muy buen estado. Hay grupos de entrenamientos en función de tus objetivos: ocio, entrenamiento intenso, mejorar la técnica... Se encuentra a 5 mins en coche de mi casa y tiene parking. Hay buen ambiente, pero al ser tran grande, se pierde un poco la familiaridad. Es más caro.
+
+-   Real Club de Tenis Betis: club histórico de tenis en Sevilla. Reconocido a nivel nacional. Ideal si quieres mejorar y entrenar de forma intensa. Realiza grandes torneos y está hermanado con otros clubes de tenis de España. Cuenta con 6 pistas de tenis de tierra batida, gimansio, pistas de padel y piscina. Se sitúa en Sevilla, por lo que está a 15 minutos en coche, más el tiempo de aparcamiento. Es caro.
+
+# SOLUCIÓN PROBLEMA.
+
+En primer lugar, vamos a presentar los criterios y subcriterios tenidos en cuenta:
+
+-   Ambiente: la buena relación entre alumnos y monitores es esencial. Este criterio, los vamos a dividir en dos subcriterios: familiaridad y eventos deportivos. Familiaridad: se agradece el buen rollo y las ganas de disfrutar el deporte. Tanto entre los alumnos como con los monitores. Eventos deportivos: súper importante para crear vínculos con otros jugadores y para crear un ambiente deportivo y de competición.
+
+-   Servicios: este criterio también lo vamos a dividir en dos subcriterios: pistas de tenis e instalaciones. En primer lugar, pistas de tenis: lo ideal es que haya varias pistas de tenis, para poder alquilarlas y que estén en buen estado. Instalaciones: siempre es mejor que el club posea otras istalaciones como gimnasio, pistas de padel o bar, para que se convierta en un club donde disfrutar, además de hacer deporte.
+
+-   Ubicación y accesibilidad: debido a la falta de tiempo, lo ideal es que el club esté cerca de casa o, por lo menos, que sea fácil de aparcar con el coche.
+
+-   Precio: debido a que no quiero dedicarme profesionalmente, los precios deben ser asequibles.
+
+-   Entrenamientos: aunque mi principal objetivo sea divertirme mientras hago deporte, para mí es esencial que los entrenamientos sean intensos y competitivos.
+
+Una vez presentados el problema, los criterios y las alternativas, procedemos a aplicar las diferentes técnicas de decisión multicriterio.
+
+## Resolución con AHP con R.
+
+Con toda la información anterior, voy a contruir las tablas de comparación 2 a 2. Y calculamos los pesos locales:
+
+```{r}
+source("teoriadecision_funciones_multicriterio.R")
+source("teoriadecision_funciones_multicriterio_diagram.R")
+source("teoriadecision_funciones_multicriterio_utiles.R")
+n.criterios = c("Ambiente","Servicios","Ubicación y accesibilidad","Precio","Entrenamientos")
+tab1 = multicriterio.crea.matrizvaloraciones_mej(c(2,1/3,5,3,1/4,3,1/2,6,2,1/7),5,n.criterios)
+tab1
+pl1 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab1)
+(pl1r = round(pl1$valoraciones.ahp,4))
+```
+
+```{r}
+#Ambiente:
+n.criterios2 = c("Familiaridad","Eventos deportivos")
+tab2 = multicriterio.crea.matrizvaloraciones_mej(c(2),2,n.criterios2)
+tab2
+pl2 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab2)
+(pl2r = round(pl2$valoraciones.ahp,4))
+```
+
+```{r}
+#Servicios
+n.criterios3 = c("Pistas de tenis","Instalaciones")
+tab3 = multicriterio.crea.matrizvaloraciones_mej(c(6),2,n.criterios3)
+tab3
+pl3 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab3)
+(pl3r = round(pl3$valoraciones.ahp,4))
+```
+
+```{r}
+C11 = 0.2554 * 0.6667
+C12 = 0.2554 * 0.3333 
+C21 = 0.1037 * 0.8571
+C22 = 0.1037 * 0.1429
+C3 = 0.4157
+C4 = 0.0419 
+C5 = 0.1833
+
+crisub = c(C11,C12,C21,C22,C3,C4,C5)
+crisub
+```
+
+Para las alternativas:
+
+```{r}
+#Familiaridad
+n.alternativas = c("Mirador","Bernier","Río Grande","Tenis Betis")
+tab4 = multicriterio.crea.matrizvaloraciones_mej(c(2,4,6,2,4,2),4,n.alternativas)
+tab4
+pl4 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab4)
+(pl4r = round(pl4$valoraciones.ahp,4))
+```
+
+```{r}
+#Eventos deportivos
+tab5 = multicriterio.crea.matrizvaloraciones_mej(c(1/3,1/5,1/6,1/3,1/5,1/3),4,n.alternativas)
+tab5
+pl5 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab5)
+(pl5r = round(pl5$valoraciones.ahp,4))
+```
+
+```{r}
+#Pistas de tenis
+tab6 = multicriterio.crea.matrizvaloraciones_mej(c(1/3,1/9,1/6,1/7,1/2,6),4,n.alternativas)
+tab6
+pl6 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab6)
+(pl6r = round(pl6$valoraciones.ahp,4))
+```
+
+```{r}
+#Instalaciones
+tab7 = multicriterio.crea.matrizvaloraciones_mej(c(1/2,1/5,2,1/3,2,4),4,n.alternativas)
+tab7
+pl7 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab7)
+(pl7r = round(pl7$valoraciones.ahp,4))
+```
+
+```{r}
+#Ubicación
+tab8 = multicriterio.crea.matrizvaloraciones_mej(c(2,5,9,3,8,7),4,n.alternativas)
+tab8
+pl8 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab8)
+(pl8r = round(pl8$valoraciones.ahp,4))
+```
+
+```{r}
+#Precio
+tab9 = multicriterio.crea.matrizvaloraciones_mej(c(3,5,6,2,4,2),4,n.alternativas)
+tab9
+pl9 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab9)
+(pl9r = round(pl9$valoraciones.ahp,4))
+```
+
+```{r}
+#Entrenamientos
+tab10 = multicriterio.crea.matrizvaloraciones_mej(c(1/4,1/5,1/8,1/3,1/6,1/3),4,n.alternativas)
+tab10
+pl10 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab10)
+(pl10r = round(pl10$valoraciones.ahp,4))
+```
+
+Una vez calculados los pesos locales, pasamos a los pesos globales.
+
+```{r}
+matper = matrix(c(0.5132,0.2751,0.1376,0.0741,
+                  0.0589,0.1195,0.2661,0.5554,
+                  0.0434,0.0993,0.6780,0.1794,
+                  0.1349,0.2116,0.5529,0.1006,
+                  0.5157,0.3050,0.1431,0.0362,
+                  0.5715,0.2355,0.1224,0.0706,
+                  0.0482,0.1182,0.2500,0.5836),ncol=4,nrow=7,byrow = TRUE)
+pond.globales = crisub %*% matper
+colnames(pond.globales) = n.alternativas
+pond.globales
+round(pond.globales*100,2)
+```
+
+```{r}
+Mcrisub = matrix(crisub,ncol=4,nrow=7)
+Mcrisub
+pond.globales.parciales = Mcrisub*matper
+round(pond.globales.parciales*100,2)
+
+```
+
+CONCLUSIONES: Viendo los resultados, elegiríamos el club Mirador, con un 34,54%, seguido del club Bernier con un 22.73%. Las interpretaciones de por qué han salido estos resultados, la vamos a ver mejor con la librería AHP.
+
+Veámos ahora la inconsistencia de cada una de las tablas:
+
+```{r}
+Inconsistencia1 = multicriterio.metodoAHP.coef.inconsistencia(tab1)
+c(Inconsistencia1$mensaje, round(Inconsistencia1$RI.coef.inconsistencia,4) )
+
+Inconsistencia2 = multicriterio.metodoAHP.coef.inconsistencia(tab2)
+c(Inconsistencia2$mensaje, round(Inconsistencia2$RI.coef.inconsistencia,4) )
+
+Inconsistencia3 = multicriterio.metodoAHP.coef.inconsistencia(tab3)
+c(Inconsistencia3$mensaje, round(Inconsistencia3$RI.coef.inconsistencia,4) )
+
+Inconsistencia4 = multicriterio.metodoAHP.coef.inconsistencia(tab4)
+c(Inconsistencia4$mensaje, round(Inconsistencia4$RI.coef.inconsistencia,4) )
+
+Inconsistencia5 = multicriterio.metodoAHP.coef.inconsistencia(tab5)
+c(Inconsistencia5$mensaje, round(Inconsistencia5$RI.coef.inconsistencia,4) )
+
+Inconsistencia6 = multicriterio.metodoAHP.coef.inconsistencia(tab6)
+c(Inconsistencia6$mensaje, round(Inconsistencia6$RI.coef.inconsistencia,4) )
+
+Inconsistencia7 = multicriterio.metodoAHP.coef.inconsistencia(tab7)
+c(Inconsistencia7$mensaje, round(Inconsistencia7$RI.coef.inconsistencia,4) )
+
+Inconsistencia8 = multicriterio.metodoAHP.coef.inconsistencia(tab8)
+c(Inconsistencia8$mensaje, round(Inconsistencia8$RI.coef.inconsistencia,4) )
+
+Inconsistencia9 = multicriterio.metodoAHP.coef.inconsistencia(tab9)
+c(Inconsistencia9$mensaje, round(Inconsistencia9$RI.coef.inconsistencia,4) )
+
+Inconsistencia10 = multicriterio.metodoAHP.coef.inconsistencia(tab10)
+c(Inconsistencia10$mensaje, round(Inconsistencia10$RI.coef.inconsistencia,4) )
+```
+
+Podemos comprobar que todas las matrices tienen consistencia aceptable. Por lo que las valoraciones que hemos puesto tienen sentido.
+
+## Resolución con AHP con librería AHP.
+
+```{r}
+library(ahp)
+datos = Load("esquema.ahp")
+Calculate(datos)
+```
+
+```{r}
+Visualize(datos)
+```
+
+```{r}
+#pesos globales:
+t1 = AnalyzeTable(datos)
+export_formattable(AnalyzeTable(datos), file = "tablaahpGlobal.png")
+#MEJOR DECISIÓN: ALTERNATIVA B (peso global del 53.1%)
+
+#pesos locales:
+t2 = AnalyzeTable(datos, variable = "priority")
+export_formattable(t2, file = "tablaahpLocal.png")
+
+formattable::as.htmlwidget(t1)
+formattable::as.htmlwidget(t2)
+```
+
+CONCLUSIONES:
+
+Viendo las tablas podemos sacar muchas conclusiones, por ejemplo:
+
+-   Elegimos la opción club Mirador, pues es el que tiene mejor puntuación: 34.5%.
+
+-   Lo que más le puntúa para ser elegido es la ubicación y accesibilidad. Se le ha dado mucha importancia a que el club de tenis esté cerca de casa y, el club Mirador es el mejor en este aspecto. Además, al ser un club pequeño, hay mucha familiaridad y un muy buen ambiente, por lo que esto le suma mucho también. Teniendo en cuenta que son los dos criterios con más peso, esta alternativa sale ganadora.
+
+-   Del mismo modo se puede pensar con el club Bernier. Se caracteriza por la ubicación y el ambiente. Aún así, al tener peores valoraciones que el club Mirador, se queda en segunda posición.
+
+-   Por otro lado, el club Río Grande. El mejor en cuanto a los servicios debido al gran número de pistas de tenis que posee. Sin embargo, este no es el criterio con más peso y en los demás no es el mejor. Por eso termina en tercera posición.
+
+-   Por último, el club Tenis Betis. La ubicación y accesibilidad es lo que más le penaliza, pues tiene muy mala valoración y es el criterio con más peso. Es el mejor en los entrenamientos, pues es un club bastante serio, pero no es suficiente para ser elegido.
+
+-   La diferencia de pesos en los criterios hace realmente que nos decantemos por una u otra alternativa.
+
+-   Se puede comprobar que todas las comparaciones tienen una inconsistencia de menos de un 10%, por lo que hemos valorado con buen criterio y sin muchas inconsistencias.
+
+
+
