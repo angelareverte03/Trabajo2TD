@@ -30,6 +30,8 @@ Veamos ahora las diferentes alternativas y una breve presentación de ellas:
 
 -   Real Club de Tenis Betis: club histórico de tenis en Sevilla. Reconocido a nivel nacional. Ideal si quieres mejorar y entrenar de forma intensa. Realiza grandes torneos y está hermanado con otros clubes de tenis de España. Cuenta con 6 pistas de tenis de tierra batida, gimansio, pistas de padel y piscina. Se sitúa en Sevilla, por lo que está a 15 minutos en coche, más el tiempo de aparcamiento. Es caro.
 
+
+
 # SOLUCIÓN PROBLEMA.
 
 En primer lugar, vamos a presentar los criterios y subcriterios tenidos en cuenta:
@@ -79,6 +81,8 @@ pl3 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab3)
 (pl3r = round(pl3$valoraciones.ahp,4))
 ```
 
+De esta forma, ya tenemos todos los pesos locales de todos los criterios y subcriterios:
+
 ```{r}
 C11 = 0.2554 * 0.6667
 C12 = 0.2554 * 0.3333 
@@ -92,7 +96,7 @@ crisub = c(C11,C12,C21,C22,C3,C4,C5)
 crisub
 ```
 
-Para las alternativas:
+Del mismo modo, calculamos los pesos locales para las alternativas en función de cada criterio y subcriterio:
 
 ```{r}
 #Familiaridad
@@ -152,6 +156,7 @@ pl10 = multicriterio.metodoAHP.variante1.autovectormayorautovalor(tab10)
 ```
 
 Una vez calculados los pesos locales, pasamos a los pesos globales.
+Al ser un problema multinivel, los vamos a calcular a mano. Aunque podamos sacar todas las conclusiones con estos resultados, voy a terminar de explicarlas con la librería AHP, pues todas las tablas se aprecian mucho mejor y tenemos las mismas soluciones pero de forma más visual.
 
 ```{r}
 matper = matrix(c(0.5132,0.2751,0.1376,0.0741,
@@ -175,7 +180,7 @@ round(pond.globales.parciales*100,2)
 
 ```
 
-CONCLUSIONES: Viendo los resultados, elegiríamos el club Mirador, con un 34,54%, seguido del club Bernier con un 22.73%. Las interpretaciones de por qué han salido estos resultados, la vamos a ver mejor con la librería AHP.
+CONCLUSIONES: Viendo los resultados, elegiríamos el club Mirador, con un 34,54%, seguido del club Bernier con un 22.73%. Las interpretaciones de por qué han salido estos resultados, la vamos a ver mejor con la librería AHP como he comentado anteriormente.
 
 Veámos ahora la inconsistencia de cada una de las tablas:
 
@@ -211,9 +216,11 @@ Inconsistencia10 = multicriterio.metodoAHP.coef.inconsistencia(tab10)
 c(Inconsistencia10$mensaje, round(Inconsistencia10$RI.coef.inconsistencia,4) )
 ```
 
-Podemos comprobar que todas las matrices tienen consistencia aceptable. Por lo que las valoraciones que hemos puesto tienen sentido.
+Podemos comprobar que todas las matrices tienen consistencia aceptable. Por lo que las valoraciones que hemos puesto tienen sentido. No hay errores de inconsistencia y en las tablas no se forman ciclos entre preferencias de las alternativas y criterios.
 
 ## Resolución con AHP con librería AHP.
+
+Ahora vamos a hacer lo mismo, pero con la ayuda de la libreria AHP. Para ello, he plasmado toda la información en el fichero esquema.ahp. Deben salir las mismas conclusiones, pero vamos a comentarlas en esta sección, pues la salida es mucho más visual e intuitiva.
 
 ```{r}
 library(ahp)
@@ -257,44 +264,48 @@ Viendo las tablas podemos sacar muchas conclusiones, por ejemplo:
 
 -   Se puede comprobar que todas las comparaciones tienen una inconsistencia de menos de un 10%, por lo que hemos valorado con buen criterio y sin muchas inconsistencias.
 
-
 ## Resolución con Electre.
 
-En primer lugar creamos la matriz de decisión. Para ello, vamos a tratar los subcriterios como criterios y de esta forma veremos más fácil como aplicar este método.
-Vamos a darle estos valores a cada alternativa en cada criterio:
+En primer lugar creamos la matriz de decisión. Para ello, vamos a tratar los subcriterios como criterios y de esta forma veremos más fácil como aplicar este método. Vamos a darle estos valores a cada alternativa en cada criterio:
 
-- Familiaridad: como es algo subjetivo, voy a poner un porcentaje en función de mi propio criterio. (Maximizar) (Mantenemos distancias con porcentajes con respecto a la tabla AHP anterior)
-- Eventos deportivos: una media de cuántos torneos por mes. (Maximizar)
-- Pistas de tenis: nº de pistas de tenis. (Maximizar)
-- Instalaciones: valoración en porcentaje personal.(Maximizar)
-- Ubicación y accesibilidad: tiempo de trayecto (si es en coche, añadir 5 mins más por aparcamiento) (Minimizar)
-- Precio: Cuota mensual (euros). (Minimizar)
-- Entrenamientos: valoración en porcentaje personal. (Maximizar)
+-   Familiaridad: como es algo subjetivo, voy a poner un porcentaje en función de mi propio criterio. Este criterio lo querremos maximizar. Para obtener estos valores he mantenido las diferencias dadas en la tabla AHP, pero esta vez de forma porcentual.
+-   Eventos deportivos: una media de cuántos torneos por mes. Lo ideal es tener el máximo número de torneos al mes. 
+-   Pistas de tenis: nº de pistas de tenis. Es algo objetivo. Cuantas más pistas de tenis tenga un club, mejor será valorado.
+-   Instalaciones: valoración en porcentaje personal. Viendo las instalaciones que ofrecen cada club en sus páginas webs, les proporciono una nota personal. La valoración será en porcentaje y la querremos maximizar.
+-   Ubicación y accesibilidad: tiempo de trayecto. Como hay clubes que se pueden ir andando y otros que se tiene que ir en coche, voy a poner una penalización al tiempo de ir en coche. Es decir, si es necesario ir en coche, voy a añadirle al tiempo 5 mins más debido al aparcamiento y como penalización en sí de tener que coger un vehículo. El objetivo de este criterio será minimizarlo.
+-   Precio: Cuota mensual (euros). El objetivo es minimizar el gasto mensual.
+-   Entrenamientos: valoración en porcentaje personal. Leyendo las descripciones de los clubes en sus páginas webs y por experiencia personal, voy a decidir una nota de lo que creo que van a ser los entrenamientos. El objetivo va a ser maximizar este criterio, pues lo ideal es que los entrenamientos sean intensos y competitivos.
 
 Los de minimizar, los añadimos directamente con el menos.
+
 ```{r}
-elec = multicriterio.crea.matrizdecision(
+matrizDec = multicriterio.crea.matrizdecision(
   c(100, 4,  1,  50,  -5,  -45, 60,
     75,  3,  4,  60,  -10, -55, 75,
     50,  2,  16, 90,  -10, -60, 85,
     25,  1,  6,  20,  -20, -70, 100),
   numalternativas = 4,
-  numcriterios = 7
+  numcriterios = 7,
+  v.nombresalt = c("Mirador","Bernier","Río Grande","Tenis Betis"),
+  v.nombrescri = c('Fam.', 'Eventos', 'Nº Pistas', 'Instalaciones', 'Ubicación', 'Precio','Entr.')
 )
-elec
+matrizDec
 ```
+
 Vamos a usar los pesos de los criterios que hemos obtenido con el AHP, para poder compararlos. Además, tiene sentido, pues yo soy la que le doy más importancia a uno o a otro criterio.
 
 Además, voy a usar para el test de discordancia los siguientes valores para las diferencias:
 
-- Eventos deportivos: si hay una diferencia de 5 eventos.
-- Pistas: si hay una diferencia de 10 pistas.
-- Ubicación y accesibilidad: si hay una diferencia de 15 minutos de trayecto.
-- Precio: si hay una diferencia mensual de 50 euros.
+-   Eventos deportivos: si hay una diferencia de 5 eventos, para mí esa diferencia es demasiada y por lo tanto la voy a tener en cuenta.
+-   Pistas: si hay una diferencia de 10 pistas. Se puede comprobar la diferencia de dos clubes con el número de pistas de tenis que poseen. 
+-   Ubicación y accesibilidad: si hay una diferencia de 15 minutos de trayecto. El tiempo es fundamental para mí. Una diferencia de más de 15 minutos supone grandes consecuencias para mi día. 
+-   Precio: si hay una diferencia mensual de 50 euros. Para mí el precio no era un criterio muy importante pues más o menos los precios son similares. Sin embargo, una diferencia de 50 euros sí es algo excesivo.
+
+Resolvemos electre con esta información:
 
 ```{r}
 solElec = multicriterio.metodoELECTRE_I(
-  elec,
+  matrizDec,
   pesos.criterios = crisub,
   nivel.concordancia.minimo.alpha = 0.7,
   no.se.compensan = c(Inf, 5, 10, Inf, 15,50,Inf),
@@ -307,11 +318,12 @@ qgraph::qgraph(solElec$relacion.dominante)
 
 solElec$nucleo_aprox
 ```
+
 Viendo este grafo y viendo el núcleo obtenido, vamos a modificar el alpha para que nos quedemos solo con una alternativa. Es decir, ponemos más restrictivo el superar el test de concordancia.Y nos quedamos solo con las alternativas posibles: club Mirador y club Río Grande:
 
 ```{r}
 solElec2 = multicriterio.metodoELECTRE_I(
-  elec,
+  matrizDec,
   pesos.criterios = crisub,
   nivel.concordancia.minimo.alpha = 0.55,
   no.se.compensan = c(Inf, 5, 10, Inf, 15,50,Inf),
@@ -324,11 +336,12 @@ qgraph::qgraph(solElec2$relacion.dominante)
 
 solElec2$nucleo_aprox
 ```
-Puesto que todavía no hemos llegado a ninguna solución, vamos a modificar también el test de discordancia. Como en realidad no necesito tantas pistas de tenis y, además, siempre tengo la opción de alquilarla en cualquier otro lugar, voy a modificar esa restricción. 
+
+Puesto que todavía no hemos llegado a ninguna solución, vamos a modificar también el test de discordancia. Como en realidad no necesito tantas pistas de tenis y, además, siempre tengo la opción de alquilarla en cualquier otro lugar, voy a modificar esa restricción.
 
 ```{r}
 solElec3 = multicriterio.metodoELECTRE_I(
-  elec,
+  matrizDec,
   pesos.criterios = crisub,
   nivel.concordancia.minimo.alpha = 0.55,
   no.se.compensan = c(Inf, 5, Inf, Inf, 15,50,Inf),
@@ -341,10 +354,12 @@ qgraph::qgraph(solElec3$relacion.dominante)
 
 solElec3$nucleo_aprox
 ```
+
 CONCLUSIÓN:
 
-Según el procedimiento de Electre también llegamos a la misma conclusión: quedarnos con la alternativa del club Mirador. Con los datos que le he proporcionado, ha sido complicada la elección entre las alternativas del club Mirador y del club Río Grande. Sin embargo, cambiando un poco las restricciones de los test de concordancia y discordancia en función de nuestro criterio y lógica, hemos podido concluir y tomar una decisión.
+Según el procedimiento de Electre también llegamos a la misma conclusión: quedarnos con la alternativa del club Mirador. Con los datos que le he proporcionado, ha sido complicada la elección entre las alternativas de club Mirador y de club Río Grande. Sin embargo, cambiando un poco las restricciones de los test de concordancia y discordancia en función de nuestro criterio y lógica, hemos podido concluir y tomar una decisión.
 
+### Electre completo con tablas.
 Por otro lado, si queremos ver los pasos intermedios y las tablas de concordancia y discordancia, lo detallo a continuación. (Detallo solo con las restricciones finales)
 
 ```{r}
@@ -365,3 +380,29 @@ completo$TSuperacion$KE
 ```
 
 Con estas tablas podemos comprobar que el par (a1,a3) supera ambos tests (el de concordancia y el de discordancia), pero que el par (a3,a1) no supera el test de concordancia. Por ello, la alternativa 1 (club Mirador) supera a la alternativa 3 (club Río Grande)
+
+
+## Resolución con Promethee con R.
+
+A continuación voy a resolver el problema con la técnica de Promethee. Para ello, voy usar la misma matriz de decisión, los mismos pesos (para poder comparar y porque realmente muestran mis preferencias).
+Para las funciones de preferencia, voy a tomar una distinta en cada criterio.
+
+- Familiaridad: preferencia lineal (q=5,p=30)
+- Eventos deportivos: cuasi criterio (q=0.5)
+- Nº Pistas: criterio con preferencia lineal y área de indiferencia (q=2,p=8)
+- Instalaciones: criterio nivel (q=5,p=30)
+- Ubicación:
+- Precio:
+- Entrenamientos:
+
+Las funciones de preferencias quedarían así:
+```{r}
+#                  num fun  q    p   s
+tab.fpref = matrix( c(3,    5,  30,  0,
+                      2,  0.5,   0,  0,
+                      5,    2,   8,  0,
+                      4,    5,  30,  0,
+                      1,    0,   1,  0,
+                      6,    0,   1,  5),ncol=4,byrow=TRUE)
+```
+

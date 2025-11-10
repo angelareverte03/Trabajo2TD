@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ángela Reverte Pagola">
+
+<title>Trabajo 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/quarto-html/quarto.js"></script>
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/quarto-html/popper.min.js"></script>
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Trabajo2_Reverte_Pagola_Angela_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Trabajo2_Reverte_Pagola_Angela_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Trabajo2_Reverte_Pagola_Angela_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Trabajo2_Reverte_Pagola_Angela_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Trabajo2_Reverte_Pagola_Angela_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/viz-1.8.2/viz.js"></script>
+
+<link href="Trabajo2_Reverte_Pagola_Angela_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/grViz-binding-1.0.11/grViz.js"></script>
+
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/formattable_widget-binding-0.2.1/formattable_widget.js"></script>
+
+<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="Trabajo2_Reverte_Pagola_Angela_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#presentacion-del-problema." id="toc-presentacion-del-problema." class="nav-link active" data-scroll-target="#presentacion-del-problema."><span class="header-section-number">1</span> PRESENTACION DEL PROBLEMA.</a></li>
+  <li><a href="#solución-problema." id="toc-solución-problema." class="nav-link" data-scroll-target="#solución-problema."><span class="header-section-number">2</span> SOLUCIÓN PROBLEMA.</a>
+  <ul class="collapse">
+  <li><a href="#resolución-con-ahp-con-r." id="toc-resolución-con-ahp-con-r." class="nav-link" data-scroll-target="#resolución-con-ahp-con-r."><span class="header-section-number">2.1</span> Resolución con AHP con R.</a></li>
+  <li><a href="#resolución-con-ahp-con-librería-ahp." id="toc-resolución-con-ahp-con-librería-ahp." class="nav-link" data-scroll-target="#resolución-con-ahp-con-librería-ahp."><span class="header-section-number">2.2</span> Resolución con AHP con librería AHP.</a></li>
+  <li><a href="#resolución-con-electre." id="toc-resolución-con-electre." class="nav-link" data-scroll-target="#resolución-con-electre."><span class="header-section-number">2.3</span> Resolución con Electre.</a></li>
+  <li><a href="#resolución-con-promethee-con-r." id="toc-resolución-con-promethee-con-r." class="nav-link" data-scroll-target="#resolución-con-promethee-con-r."><span class="header-section-number">2.4</span> Resolución con Promethee con R.</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trabajo 2</h1>
+<p class="subtitle lead">Elección club deportivo para practicar tenis</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ángela Reverte Pagola </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="presentacion-del-problema." class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> PRESENTACION DEL PROBLEMA.</h1>
+<p>Mi pasión siempre han sido los deportes. He practicado muchos como: natación, baloncesto, tenis o fútbol sala. Este año, quiero volver a jugar al tenis y me encuentro emocionada. El problema es que tengo muchas opciones de clubes de tenis donde apuntarme y no sé qué hacer.</p>
+<p>Para mí, el deporte es algo esencial en mi vida y, aunque no me quiero dedicar de forma profesional, me gusta mucho que los entrenamientos sean muy intensos y lo más profesionales posibles. Sin embargo, creo que el ambiente debe ser divertido y relajado. Tan importante es hacer deporte serio como disfrutarlo y pasarlo bien.</p>
+<p>Por otro lado, durante el día estoy muy ajetreada, por lo que es importante no perder tiempo en el desplazamiento. Lo ideal sería que el club estuviera cerca de casa o, por lo menos, que tuviera fácil aparcamiento.</p>
+<p>En cuanto a lo económico, para mí no es tan importante. Los precios son todos parecidos, aunque sí es verdad que algunos incluyen más servicios que otros. De hecho, es importante destacar que no todos los clubes tienen las mismas instalaciones. A mi me encanta alquilar pistas con mi hermano y amigos para jugar. Y no todos los clubes tienen las mismas facilidades.</p>
+<p>Veamos ahora las diferentes alternativas y una breve presentación de ellas:</p>
+<ul>
+<li><p>Club Mirador: Club muy cercano a mi casa (5 mins andando). Es un club social y pequeño, pero muy familiar. Cuenta con una escuela de tenis que lleva este deporte también en otros clubes. Todos los monitores son profesionales y muy cercanos. El problema es que cuenta solo con una pista de tenis, por lo que, por un lado, las clases de tenis tienen un alto número de alumnos y, por otro, es dicícil reservarla, pues siempre está ocupada. Esta escuela de tenis se preocupa mucho por hacer eventos y torneos. Siempre con el objetivo de pasarlo bien. Es perfecta para tener el tenis como ocio. Es bastante económica.</p></li>
+<li><p>Club Bernier: aunque también es un club social, su objetivo principal es el tenis. Bastante profesional, pero sin perder de vista el ocio y el disfrute. Está también muy cerca de casa (10 mins andando). Cuenta con 4 pistas de tenis, gimnasio, pistas de padel y bar/restaurante. También realizan muchos partidos y torneos en los que te puedes poner a prueba como tenista. No es tan económico.</p></li>
+<li><p>Club de tenis Río Grande: club dedicado al tenis. Este club se dedica al tenis, aunque cuenta también con otros muchos servicios como piscina, sala fitness, pistas de padel o campos de fútbol. Es un club muy grande, con 16 pistas de tenis, de las cuales 12 son de tierra batida y en muy buen estado. Hay grupos de entrenamientos en función de tus objetivos: ocio, entrenamiento intenso, mejorar la técnica… Se encuentra a 5 mins en coche de mi casa y tiene parking. Hay buen ambiente, pero al ser tran grande, se pierde un poco la familiaridad. Es más caro.</p></li>
+<li><p>Real Club de Tenis Betis: club histórico de tenis en Sevilla. Reconocido a nivel nacional. Ideal si quieres mejorar y entrenar de forma intensa. Realiza grandes torneos y está hermanado con otros clubes de tenis de España. Cuenta con 6 pistas de tenis de tierra batida, gimansio, pistas de padel y piscina. Se sitúa en Sevilla, por lo que está a 15 minutos en coche, más el tiempo de aparcamiento. Es caro.</p></li>
+</ul>
+</section>
+<section id="solución-problema." class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> SOLUCIÓN PROBLEMA.</h1>
+<p>En primer lugar, vamos a presentar los criterios y subcriterios tenidos en cuenta:</p>
+<ul>
+<li><p>Ambiente: la buena relación entre alumnos y monitores es esencial. Este criterio, los vamos a dividir en dos subcriterios: familiaridad y eventos deportivos. Familiaridad: se agradece el buen rollo y las ganas de disfrutar el deporte. Tanto entre los alumnos como con los monitores. Eventos deportivos: súper importante para crear vínculos con otros jugadores y para crear un ambiente deportivo y de competición.</p></li>
+<li><p>Servicios: este criterio también lo vamos a dividir en dos subcriterios: pistas de tenis e instalaciones. En primer lugar, pistas de tenis: lo ideal es que haya varias pistas de tenis, para poder alquilarlas y que estén en buen estado. Instalaciones: siempre es mejor que el club posea otras istalaciones como gimnasio, pistas de padel o bar, para que se convierta en un club donde disfrutar, además de hacer deporte.</p></li>
+<li><p>Ubicación y accesibilidad: debido a la falta de tiempo, lo ideal es que el club esté cerca de casa o, por lo menos, que sea fácil de aparcar con el coche.</p></li>
+<li><p>Precio: debido a que no quiero dedicarme profesionalmente, los precios deben ser asequibles.</p></li>
+<li><p>Entrenamientos: aunque mi principal objetivo sea divertirme mientras hago deporte, para mí es esencial que los entrenamientos sean intensos y competitivos.</p></li>
+</ul>
+<p>Una vez presentados el problema, los criterios y las alternativas, procedemos a aplicar las diferentes técnicas de decisión multicriterio.</p>
+<section id="resolución-con-ahp-con-r." class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="resolución-con-ahp-con-r."><span class="header-section-number">2.1</span> Resolución con AHP con R.</h2>
+<p>Con toda la información anterior, voy a contruir las tablas de comparación 2 a 2. Y calculamos los pesos locales:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"teoriadecision_funciones_multicriterio.R"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"teoriadecision_funciones_multicriterio_diagram.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cargando paquete requerido: shape</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"teoriadecision_funciones_multicriterio_utiles.R"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>n.criterios <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Ambiente"</span>,<span class="st">"Servicios"</span>,<span class="st">"Ubicación y accesibilidad"</span>,<span class="st">"Precio"</span>,<span class="st">"Entrenamientos"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tab1 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>),<span class="dv">5</span>,n.criterios)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>tab1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                           Ambiente Servicios Ubicación y accesibilidad Precio
+Ambiente                  1.0000000 2.0000000                 0.3333333      5
+Servicios                 0.5000000 1.0000000                 0.2500000      3
+Ubicación y accesibilidad 3.0000000 4.0000000                 1.0000000      6
+Precio                    0.2000000 0.3333333                 0.1666667      1
+Entrenamientos            0.3333333 2.0000000                 0.5000000      7
+                          Entrenamientos
+Ambiente                       3.0000000
+Servicios                      0.5000000
+Ubicación y accesibilidad      2.0000000
+Precio                         0.1428571
+Entrenamientos                 1.0000000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pl1 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab1)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl1r =</span> <span class="fu">round</span>(pl1<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Ambiente                 Servicios Ubicación y accesibilidad 
+                   0.2554                    0.1037                    0.4157 
+                   Precio            Entrenamientos 
+                   0.0419                    0.1833 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ambiente:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n.criterios2 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Familiaridad"</span>,<span class="st">"Eventos deportivos"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tab2 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">2</span>),<span class="dv">2</span>,n.criterios2)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>tab2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   Familiaridad Eventos deportivos
+Familiaridad                1.0                  2
+Eventos deportivos          0.5                  1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pl2 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab2)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl2r =</span> <span class="fu">round</span>(pl2<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Familiaridad Eventos deportivos 
+            0.6667             0.3333 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Servicios</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>n.criterios3 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Pistas de tenis"</span>,<span class="st">"Instalaciones"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>tab3 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">6</span>),<span class="dv">2</span>,n.criterios3)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>tab3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                Pistas de tenis Instalaciones
+Pistas de tenis       1.0000000             6
+Instalaciones         0.1666667             1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pl3 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab3)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl3r =</span> <span class="fu">round</span>(pl3<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pistas de tenis   Instalaciones 
+         0.8571          0.1429 </code></pre>
+</div>
+</div>
+<p>De esta forma, ya tenemos todos los pesos locales de todos los criterios y subcriterios:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>C11 <span class="ot">=</span> <span class="fl">0.2554</span> <span class="sc">*</span> <span class="fl">0.6667</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>C12 <span class="ot">=</span> <span class="fl">0.2554</span> <span class="sc">*</span> <span class="fl">0.3333</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>C21 <span class="ot">=</span> <span class="fl">0.1037</span> <span class="sc">*</span> <span class="fl">0.8571</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>C22 <span class="ot">=</span> <span class="fl">0.1037</span> <span class="sc">*</span> <span class="fl">0.1429</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>C3 <span class="ot">=</span> <span class="fl">0.4157</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>C4 <span class="ot">=</span> <span class="fl">0.0419</span> </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>C5 <span class="ot">=</span> <span class="fl">0.1833</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>crisub <span class="ot">=</span> <span class="fu">c</span>(C11,C12,C21,C22,C3,C4,C5)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>crisub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.17027518 0.08512482 0.08888127 0.01481873 0.41570000 0.04190000 0.18330000</code></pre>
+</div>
+</div>
+<p>Del mismo modo, calculamos los pesos locales para las alternativas en función de cada criterio y subcriterio:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Familiaridad</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>n.alternativas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Mirador"</span>,<span class="st">"Bernier"</span>,<span class="st">"Río Grande"</span>,<span class="st">"Tenis Betis"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>tab4 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>),<span class="dv">4</span>,n.alternativas)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>tab4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Mirador Bernier Río Grande Tenis Betis
+Mirador     1.0000000    2.00        4.0           6
+Bernier     0.5000000    1.00        2.0           4
+Río Grande  0.2500000    0.50        1.0           2
+Tenis Betis 0.1666667    0.25        0.5           1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pl4 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab4)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl4r =</span> <span class="fu">round</span>(pl4<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+     0.5132      0.2751      0.1376      0.0741 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Eventos deportivos</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tab5 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>),<span class="dv">4</span>,n.alternativas)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>tab5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Mirador   Bernier Río Grande Tenis Betis
+Mirador           1 0.3333333  0.2000000   0.1666667
+Bernier           3 1.0000000  0.3333333   0.2000000
+Río Grande        5 3.0000000  1.0000000   0.3333333
+Tenis Betis       6 5.0000000  3.0000000   1.0000000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pl5 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab5)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl5r =</span> <span class="fu">round</span>(pl5<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+     0.0589      0.1195      0.2661      0.5554 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Pistas de tenis</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>tab6 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">9</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">6</span>),<span class="dv">4</span>,n.alternativas)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>tab6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Mirador   Bernier Río Grande Tenis Betis
+Mirador           1 0.3333333  0.1111111   0.1666667
+Bernier           3 1.0000000  0.1428571   0.5000000
+Río Grande        9 7.0000000  1.0000000   6.0000000
+Tenis Betis       6 2.0000000  0.1666667   1.0000000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pl6 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab6)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl6r =</span> <span class="fu">round</span>(pl6<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+     0.0434      0.0993      0.6780      0.1794 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Instalaciones</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>tab7 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>),<span class="dv">4</span>,n.alternativas)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>tab7</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Mirador Bernier Río Grande Tenis Betis
+Mirador         1.0     0.5  0.2000000           2
+Bernier         2.0     1.0  0.3333333           2
+Río Grande      5.0     3.0  1.0000000           4
+Tenis Betis     0.5     0.5  0.2500000           1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>pl7 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab7)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl7r =</span> <span class="fu">round</span>(pl7<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+     0.1349      0.2116      0.5529      0.1006 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ubicación</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>tab8 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">7</span>),<span class="dv">4</span>,n.alternativas)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>tab8</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Mirador   Bernier Río Grande Tenis Betis
+Mirador     1.0000000 2.0000000  5.0000000           9
+Bernier     0.5000000 1.0000000  3.0000000           8
+Río Grande  0.2000000 0.3333333  1.0000000           7
+Tenis Betis 0.1111111 0.1250000  0.1428571           1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>pl8 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab8)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl8r =</span> <span class="fu">round</span>(pl8<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+     0.5157      0.3050      0.1431      0.0362 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Precio</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>tab9 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>),<span class="dv">4</span>,n.alternativas)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>tab9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Mirador Bernier Río Grande Tenis Betis
+Mirador     1.0000000    3.00        5.0           6
+Bernier     0.3333333    1.00        2.0           4
+Río Grande  0.2000000    0.50        1.0           2
+Tenis Betis 0.1666667    0.25        0.5           1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>pl9 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab9)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl9r =</span> <span class="fu">round</span>(pl9<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+     0.5715      0.2355      0.1224      0.0706 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Entrenamientos</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>tab10 <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizvaloraciones_mej</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>),<span class="dv">4</span>,n.alternativas)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>tab10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Mirador Bernier Río Grande Tenis Betis
+Mirador           1    0.25  0.2000000   0.1250000
+Bernier           4    1.00  0.3333333   0.1666667
+Río Grande        5    3.00  1.0000000   0.3333333
+Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>pl10 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante1.autovectormayorautovalor</span>(tab10)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">pl10r =</span> <span class="fu">round</span>(pl10<span class="sc">$</span>valoraciones.ahp,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+     0.0482      0.1182      0.2500      0.5836 </code></pre>
+</div>
+</div>
+<p>Una vez calculados los pesos locales, pasamos a los pesos globales. Al ser un problema multinivel, los vamos a calcular a mano. Aunque podamos sacar todas las conclusiones con estos resultados, voy a terminar de explicarlas con la librería AHP, pues todas las tablas se aprecian mucho mejor y tenemos las mismas soluciones pero de forma más visual.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>matper <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.5132</span>,<span class="fl">0.2751</span>,<span class="fl">0.1376</span>,<span class="fl">0.0741</span>,</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.0589</span>,<span class="fl">0.1195</span>,<span class="fl">0.2661</span>,<span class="fl">0.5554</span>,</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.0434</span>,<span class="fl">0.0993</span>,<span class="fl">0.6780</span>,<span class="fl">0.1794</span>,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.1349</span>,<span class="fl">0.2116</span>,<span class="fl">0.5529</span>,<span class="fl">0.1006</span>,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.5157</span>,<span class="fl">0.3050</span>,<span class="fl">0.1431</span>,<span class="fl">0.0362</span>,</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.5715</span>,<span class="fl">0.2355</span>,<span class="fl">0.1224</span>,<span class="fl">0.0706</span>,</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.0482</span>,<span class="fl">0.1182</span>,<span class="fl">0.2500</span>,<span class="fl">0.5836</span>),<span class="at">ncol=</span><span class="dv">4</span>,<span class="at">nrow=</span><span class="dv">7</span>,<span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>pond.globales <span class="ot">=</span> crisub <span class="sc">%*%</span> matper</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pond.globales) <span class="ot">=</span> n.alternativas</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>pond.globales</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Mirador   Bernier Río Grande Tenis Betis
+[1,] 0.345413 0.2272987  0.2249766   0.2023121</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pond.globales<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Mirador Bernier Río Grande Tenis Betis
+[1,]   34.54   22.73       22.5       20.23</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>Mcrisub <span class="ot">=</span> <span class="fu">matrix</span>(crisub,<span class="at">ncol=</span><span class="dv">4</span>,<span class="at">nrow=</span><span class="dv">7</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>Mcrisub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           [,1]       [,2]       [,3]       [,4]
+[1,] 0.17027518 0.17027518 0.17027518 0.17027518
+[2,] 0.08512482 0.08512482 0.08512482 0.08512482
+[3,] 0.08888127 0.08888127 0.08888127 0.08888127
+[4,] 0.01481873 0.01481873 0.01481873 0.01481873
+[5,] 0.41570000 0.41570000 0.41570000 0.41570000
+[6,] 0.04190000 0.04190000 0.04190000 0.04190000
+[7,] 0.18330000 0.18330000 0.18330000 0.18330000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>pond.globales.parciales <span class="ot">=</span> Mcrisub<span class="sc">*</span>matper</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pond.globales.parciales<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1]  [,2] [,3]  [,4]
+[1,]  8.74  4.68 2.34  1.26
+[2,]  0.50  1.02 2.27  4.73
+[3,]  0.39  0.88 6.03  1.59
+[4,]  0.20  0.31 0.82  0.15
+[5,] 21.44 12.68 5.95  1.50
+[6,]  2.39  0.99 0.51  0.30
+[7,]  0.88  2.17 4.58 10.70</code></pre>
+</div>
+</div>
+<p>CONCLUSIONES: Viendo los resultados, elegiríamos el club Mirador, con un 34,54%, seguido del club Bernier con un 22.73%. Las interpretaciones de por qué han salido estos resultados, la vamos a ver mejor con la librería AHP como he comentado anteriormente.</p>
+<p>Veámos ahora la inconsistencia de cada una de las tablas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia1 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab1)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia1<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia1<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0731"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia2 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab2)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia2<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia2<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "NaN"                   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia3 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab3)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia3<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia3<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "NaN"                   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia4 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab4)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia4<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia4<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0038"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia5 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab5)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia5<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia5<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0557"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia6 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab6)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia6<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia6<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0699"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia7 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab7)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia7<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia7<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0356"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia8 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab8)</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia8<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia8<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0747"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia9 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab9)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia9<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia9<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0181"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia10 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab10)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia10<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia10<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0597"                </code></pre>
+</div>
+</div>
+<p>Podemos comprobar que todas las matrices tienen consistencia aceptable. Por lo que las valoraciones que hemos puesto tienen sentido. No hay errores de inconsistencia y en las tablas no se forman ciclos entre preferencias de las alternativas y criterios.</p>
+</section>
+<section id="resolución-con-ahp-con-librería-ahp." class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="resolución-con-ahp-con-librería-ahp."><span class="header-section-number">2.2</span> Resolución con AHP con librería AHP.</h2>
+<p>Ahora vamos a hacer lo mismo, pero con la ayuda de la libreria AHP. Para ello, he plasmado toda la información en el fichero esquema.ahp. Deben salir las mismas conclusiones, pero vamos a comentarlas en esta sección, pues la salida es mucho más visual e intuitiva.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ahp)</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">Load</span>(<span class="st">"esquema.ahp"</span>)</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Calculate</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Visualize</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-be72239f081a2a5f9f67" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-be72239f081a2a5f9f67">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"TB\"]\n\n\n\n  \"1\" [label = \"Elegir el club donde practicar tenis\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"2\" [label = \"Ambiente\", tooltip = \"priority: 25.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"3\" [label = \"Familiaridad\", tooltip = \"priority: 66.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"4\" [label = \"Eventos deportivos\", tooltip = \"priority: 33.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"5\" [label = \"Servicios\", tooltip = \"priority: 10.4%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"6\" [label = \"Pistas de tenis\", tooltip = \"priority: 85.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"7\" [label = \"Instalaciones\", tooltip = \"priority: 14.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"8\" [label = \"Ubicación y accesibilidad\", tooltip = \"priority: 41.6%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"9\" [label = \"Precio\", tooltip = \"priority: 4.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"10\" [label = \"Entrenamientos\", tooltip = \"priority: 18.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"11\" [label = \"Alternatives\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"12\" [label = \"Club Mirador\", tooltip = \"priority: 51.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"13\" [label = \"Club Bernier\", tooltip = \"priority: 27.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"14\" [label = \"Club Río Grande\", tooltip = \"priority: 13.8%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"15\" [label = \"Club Tenis Betis\", tooltip = \"priority: 7.4%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"5\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"10\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"4\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"6\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"3\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"4\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"7\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"8\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"9\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"10\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"11\"->\"12\" [penwidth = \"2\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"13\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"14\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"15\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pesos globales:</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">=</span> <span class="fu">AnalyzeTable</span>(datos)</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="fu">export_formattable</span>(<span class="fu">AnalyzeTable</span>(datos), <span class="at">file =</span> <span class="st">"tablaahpGlobal.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co">#MEJOR DECISIÓN: ALTERNATIVA B (peso global del 53.1%)</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co">#pesos locales:</span></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>t2 <span class="ot">=</span> <span class="fu">AnalyzeTable</span>(datos, <span class="at">variable =</span> <span class="st">"priority"</span>)</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">export_formattable</span>(t2, <span class="at">file =</span> <span class="st">"tablaahpLocal.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>formattable<span class="sc">::</span><span class="fu">as.htmlwidget</span>(t1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-ed42ed6a36e5731a8664" class="formattable_widget html-widget" style="width:100%;height:480px;" width="100%" height="480"></div>
+<script type="application/json" data-for="htmlwidget-ed42ed6a36e5731a8664">{"x":{"html":"<table class=\"table table-condensed\">\n <thead>\n  <tr>\n   <th style=\"text-align:right;\">   <\/th>\n   <th style=\"text-align:right;\"> Weight <\/th>\n   <th style=\"text-align:right;\"> Club Mirador <\/th>\n   <th style=\"text-align:right;\"> Club Bernier <\/th>\n   <th style=\"text-align:right;\"> Club Río Grande <\/th>\n   <th style=\"text-align:right;\"> Club Tenis Betis <\/th>\n   <th style=\"text-align:right;\"> Inconsistency <\/th>\n  <\/tr>\n <\/thead>\n<tbody>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 0em\">Elegir el club donde practicar tenis<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c1cdc1\">100.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">34.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #b2a8b2\">22.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #b3a9b3\">22.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #bbb1bb\">20.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed9b0\">\n  <i class><\/i>\n  7.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ubicación y accesibilidad           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e5eae5\">41.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #b7adb7\">21.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #d4ced4\">12.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb\">5.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9f9f9\">1.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae\">\n  <i class><\/i>\n  7.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ambiente                            <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eff2ef\">25.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dfdbdf\">9.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe9eb\">5.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efedef\">4.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eae8ea\">6.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Familiaridad                        <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f5f7f5\">17.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1\">8.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efedef\">4.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">2.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafafa\">1.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefcfa\">\n  <i class><\/i>\n  0.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Eventos deportivos                  <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafbfa\">8.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fbfbfb\">1.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">2.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efecef\">4.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f2e1c2\">\n  <i class><\/i>\n  5.7%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Entrenamientos                      <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f4f6f4\">18.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fcfbfc\">0.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">2.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efedef\">4.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dbd6db\">10.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f1dfbe\">\n  <i class><\/i>\n  6.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Servicios                           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9faf9\">10.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfcfd\">0.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafafa\">1.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e4e8\">6.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9f8f9\">1.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Pistas de tenis                     <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafbfa\">8.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fcfbfc\">0.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea\">6.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9f8f9\">1.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efdab3\">\n  <i class><\/i>\n  7.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Instalaciones                       <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">1.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefefe\">0.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fcfbfc\">0.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefefe\">0.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6ecd8\">\n  <i class><\/i>\n  3.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Precio                              <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">4.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6f5f6\">2.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fbfbfb\">1.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefdfe\">0.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #faf5eb\">\n  <i class><\/i>\n  1.8%\n<\/span> <\/td>\n  <\/tr>\n<\/tbody>\n<\/table>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>formattable<span class="sc">::</span><span class="fu">as.htmlwidget</span>(t2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-f0f7dc080e76d615dc62" class="formattable_widget html-widget" style="width:100%;height:480px;" width="100%" height="480"></div>
+<script type="application/json" data-for="htmlwidget-f0f7dc080e76d615dc62">{"x":{"html":"<table class=\"table table-condensed\">\n <thead>\n  <tr>\n   <th style=\"text-align:right;\">   <\/th>\n   <th style=\"text-align:right;\"> Priority <\/th>\n   <th style=\"text-align:right;\"> Club Mirador <\/th>\n   <th style=\"text-align:right;\"> Club Bernier <\/th>\n   <th style=\"text-align:right;\"> Club Río Grande <\/th>\n   <th style=\"text-align:right;\"> Club Tenis Betis <\/th>\n   <th style=\"text-align:right;\"> Inconsistency <\/th>\n  <\/tr>\n <\/thead>\n<tbody>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 0em\">Elegir el club donde practicar tenis<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c1cdc1\">100.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed9b0\">\n  <i class><\/i>\n  7.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ubicación y accesibilidad           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e6ebe6\">41.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">51.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #bab0ba\">30.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dedade\">14.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6f5f6\">3.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae\">\n  <i class><\/i>\n  7.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ambiente                            <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f1f3f1\">25.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Familiaridad                        <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #d6ded6\">66.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">51.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c0b8c0\">27.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dfdbdf\">13.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eeebee\">7.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefcfa\">\n  <i class><\/i>\n  0.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Eventos deportivos                  <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ecefec\">33.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f2f0f2\">5.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e2e6\">12.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c7bfc7\">26.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">55.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f2e1c2\">\n  <i class><\/i>\n  5.7%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Entrenamientos                      <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f5f7f5\">18.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f5f4f5\">4.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e7e4e7\">11.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #cdc6cd\">25.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">58.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f1dfbe\">\n  <i class><\/i>\n  6.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Servicios                           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafbfa\">10.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Pistas de tenis                     <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #cad4ca\">85.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">4.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eeebee\">9.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">67.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e0dce0\">17.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efdab3\">\n  <i class><\/i>\n  7.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Instalaciones                       <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f8f9f8\">14.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e2dee2\">13.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #d2ccd2\">21.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">55.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e9e6e9\">10.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6ecd8\">\n  <i class><\/i>\n  3.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Precio                              <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">4.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">57.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #cfc8cf\">23.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e2e6\">12.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f0eef0\">7.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #faf5eb\">\n  <i class><\/i>\n  1.8%\n<\/span> <\/td>\n  <\/tr>\n<\/tbody>\n<\/table>"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>CONCLUSIONES:</p>
+<p>Viendo las tablas podemos sacar muchas conclusiones, por ejemplo:</p>
+<ul>
+<li><p>Elegimos la opción club Mirador, pues es el que tiene mejor puntuación: 34.5%.</p></li>
+<li><p>Lo que más le puntúa para ser elegido es la ubicación y accesibilidad. Se le ha dado mucha importancia a que el club de tenis esté cerca de casa y, el club Mirador es el mejor en este aspecto. Además, al ser un club pequeño, hay mucha familiaridad y un muy buen ambiente, por lo que esto le suma mucho también. Teniendo en cuenta que son los dos criterios con más peso, esta alternativa sale ganadora.</p></li>
+<li><p>Del mismo modo se puede pensar con el club Bernier. Se caracteriza por la ubicación y el ambiente. Aún así, al tener peores valoraciones que el club Mirador, se queda en segunda posición.</p></li>
+<li><p>Por otro lado, el club Río Grande. El mejor en cuanto a los servicios debido al gran número de pistas de tenis que posee. Sin embargo, este no es el criterio con más peso y en los demás no es el mejor. Por eso termina en tercera posición.</p></li>
+<li><p>Por último, el club Tenis Betis. La ubicación y accesibilidad es lo que más le penaliza, pues tiene muy mala valoración y es el criterio con más peso. Es el mejor en los entrenamientos, pues es un club bastante serio, pero no es suficiente para ser elegido.</p></li>
+<li><p>La diferencia de pesos en los criterios hace realmente que nos decantemos por una u otra alternativa.</p></li>
+<li><p>Se puede comprobar que todas las comparaciones tienen una inconsistencia de menos de un 10%, por lo que hemos valorado con buen criterio y sin muchas inconsistencias.</p></li>
+</ul>
+</section>
+<section id="resolución-con-electre." class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="resolución-con-electre."><span class="header-section-number">2.3</span> Resolución con Electre.</h2>
+<p>En primer lugar creamos la matriz de decisión. Para ello, vamos a tratar los subcriterios como criterios y de esta forma veremos más fácil como aplicar este método. Vamos a darle estos valores a cada alternativa en cada criterio:</p>
+<ul>
+<li>Familiaridad: como es algo subjetivo, voy a poner un porcentaje en función de mi propio criterio. Este criterio lo querremos maximizar. Para obtener estos valores he mantenido las diferencias dadas en la tabla AHP, pero esta vez de forma porcentual.</li>
+<li>Eventos deportivos: una media de cuántos torneos por mes. Lo ideal es tener el máximo número de torneos al mes.</li>
+<li>Pistas de tenis: nº de pistas de tenis. Es algo objetivo. Cuantas más pistas de tenis tenga un club, mejor será valorado.</li>
+<li>Instalaciones: valoración en porcentaje personal. Viendo las instalaciones que ofrecen cada club en sus páginas webs, les proporciono una nota personal. La valoración será en porcentaje y la querremos maximizar.</li>
+<li>Ubicación y accesibilidad: tiempo de trayecto. Como hay clubes que se pueden ir andando y otros que se tiene que ir en coche, voy a poner una penalización al tiempo de ir en coche. Es decir, si es necesario ir en coche, voy a añadirle al tiempo 5 mins más debido al aparcamiento y como penalización en sí de tener que coger un vehículo. El objetivo de este criterio será minimizarlo.</li>
+<li>Precio: Cuota mensual (euros). El objetivo es minimizar el gasto mensual.</li>
+<li>Entrenamientos: valoración en porcentaje personal. Leyendo las descripciones de los clubes en sus páginas webs y por experiencia personal, voy a decidir una nota de lo que creo que van a ser los entrenamientos. El objetivo va a ser maximizar este criterio, pues lo ideal es que los entrenamientos sean intensos y competitivos.</li>
+</ul>
+<p>Los de minimizar, los añadimos directamente con el menos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>matrizDec <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">4</span>,  <span class="dv">1</span>,  <span class="dv">50</span>,  <span class="sc">-</span><span class="dv">5</span>,  <span class="sc">-</span><span class="dv">45</span>, <span class="dv">60</span>,</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">75</span>,  <span class="dv">3</span>,  <span class="dv">4</span>,  <span class="dv">60</span>,  <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">55</span>, <span class="dv">75</span>,</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">50</span>,  <span class="dv">2</span>,  <span class="dv">16</span>, <span class="dv">90</span>,  <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">60</span>, <span class="dv">85</span>,</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">25</span>,  <span class="dv">1</span>,  <span class="dv">6</span>,  <span class="dv">20</span>,  <span class="sc">-</span><span class="dv">20</span>, <span class="sc">-</span><span class="dv">70</span>, <span class="dv">100</span>),</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">numalternativas =</span> <span class="dv">4</span>,</span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">numcriterios =</span> <span class="dv">7</span>,</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">v.nombresalt =</span> <span class="fu">c</span>(<span class="st">"Mirador"</span>,<span class="st">"Bernier"</span>,<span class="st">"Río Grande"</span>,<span class="st">"Tenis Betis"</span>),</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">v.nombrescri =</span> <span class="fu">c</span>(<span class="st">'Fam.'</span>, <span class="st">'Eventos'</span>, <span class="st">'Nº Pistas'</span>, <span class="st">'Instalaciones'</span>, <span class="st">'Ubicación'</span>, <span class="st">'Precio'</span>,<span class="st">'Entr.'</span>)</span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a>matrizDec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Fam. Eventos Nº Pistas Instalaciones Ubicación Precio Entr.
+Mirador      100       4         1            50        -5    -45    60
+Bernier       75       3         4            60       -10    -55    75
+Río Grande    50       2        16            90       -10    -60    85
+Tenis Betis   25       1         6            20       -20    -70   100</code></pre>
+</div>
+</div>
+<p>Vamos a usar los pesos de los criterios que hemos obtenido con el AHP, para poder compararlos. Además, tiene sentido, pues yo soy la que le doy más importancia a uno o a otro criterio.</p>
+<p>Además, voy a usar para el test de discordancia los siguientes valores para las diferencias:</p>
+<ul>
+<li>Eventos deportivos: si hay una diferencia de 5 eventos, para mí esa diferencia es demasiada y por lo tanto la voy a tener en cuenta.</li>
+<li>Pistas: si hay una diferencia de 10 pistas. Se puede comprobar la diferencia de dos clubes con el número de pistas de tenis que poseen.</li>
+<li>Ubicación y accesibilidad: si hay una diferencia de 15 minutos de trayecto. El tiempo es fundamental para mí. Una diferencia de más de 15 minutos supone grandes consecuencias para mi día.</li>
+<li>Precio: si hay una diferencia mensual de 50 euros. Para mí el precio no era un criterio muy importante pues más o menos los precios son similares. Sin embargo, una diferencia de 50 euros sí es algo excesivo.</li>
+</ul>
+<p>Resolvemos electre con esta información:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>solElec <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.7</span>,</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="cn">TRUE</span></span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec</span></span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>solElec<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Mirador Río Grande 
+         1          3 </code></pre>
+</div>
+</div>
+<p>Viendo este grafo y viendo el núcleo obtenido, vamos a modificar el alpha para que nos quedemos solo con una alternativa. Es decir, ponemos más restrictivo el superar el test de concordancia.Y nos quedamos solo con las alternativas posibles: club Mirador y club Río Grande:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>solElec2 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.55</span>,</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec2</span></span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec2<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>solElec2<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Mirador Río Grande 
+         1          2 </code></pre>
+</div>
+</div>
+<p>Puesto que todavía no hemos llegado a ninguna solución, vamos a modificar también el test de discordancia. Como en realidad no necesito tantas pistas de tenis y, además, siempre tengo la opción de alquilarla en cualquier otro lugar, voy a modificar esa restricción.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>solElec3 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.55</span>,</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="cn">Inf</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec3</span></span>
+<span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-11"><a href="#cb89-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec3<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>solElec3<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mirador 
+      1 </code></pre>
+</div>
+</div>
+<p>CONCLUSIÓN:</p>
+<p>Según el procedimiento de Electre también llegamos a la misma conclusión: quedarnos con la alternativa del club Mirador. Con los datos que le he proporcionado, ha sido complicada la elección entre las alternativas de club Mirador y de club Río Grande. Sin embargo, cambiando un poco las restricciones de los test de concordancia y discordancia en función de nuestro criterio y lógica, hemos podido concluir y tomar una decisión.</p>
+<p>Por otro lado, si queremos ver los pasos intermedios y las tablas de concordancia y discordancia, lo detallo a continuación. (Detallo solo con las restricciones finales)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Electre con todos los pasos:</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>completo <span class="ot">=</span> <span class="fu">func_ELECTRE_Completo</span>(solElec3)</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="co">#aqui las tablas de los índices:</span></span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>MIndices<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Alts</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Inds</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A1</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A1</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I+</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;"></td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">1,2,5,6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I=</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">1,2,3,4,5,6,7</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I-</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;"></td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">3,4,7</td>
+</tr>
+<tr class="even">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A2</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I+</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">3,4,7</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I=</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;"></td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">1,2,3,4,5,6,7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I-</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">1,2,5,6</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;"></td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> ELECTRE: Conjunto de Índices</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla del test de concordancia:</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TConcordancia<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Alts</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Inds</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A1</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A1</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">Ijk</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">1</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">0.713</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">IGjk</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">NaN</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">2.4843</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TC</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;"><span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;">F</span></td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;"><span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">T</span></td>
+</tr>
+<tr class="even">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A2</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">Ijk</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">0.287</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">IGjk</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">0.4025</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">NaN</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TC</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;"><span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;">F</span></td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;"><span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;">F</span></td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> ELECTRE: Test Concordancia</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla de discordancia:</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TDiscordancia<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Alts</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Inds</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A1</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A1</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I-</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;"></td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">3,4,7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">Djk</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;"></td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">15(Inf),40(Inf),25(Inf)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TD</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;" &gt;T&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;" &gt;T&lt;/span&gt;</td>
+</tr>
+<tr class="even">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A2</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">I-</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">1,2,5,6</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">Djk</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">50(Inf),2(5),5(15),15(50)</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TD</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;" &gt;T&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;" &gt;T&lt;/span&gt;</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> ELECTRE: Test Discordancia: vd=(Inf,5,Inf,Inf,15,50,Inf)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla de superacion de los dos test:</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TSuperacion<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Alts</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">Inds</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A1</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; color: blue !important;">A2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A1</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TC</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">&lt;span style=" color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;" &gt;F&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;" &gt;T&lt;/span&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TD</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;" &gt;T&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;" &gt;T&lt;/span&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">RSup</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;" &gt;F&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;" &gt;T&lt;/span&gt;</td>
+</tr>
+<tr class="even">
+<td rowspan="3" style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: blue !important; background-color: white !important; vertical-align: middle !important;">A2</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TC</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">&lt;span style=" color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;" &gt;F&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(128, 128, 128, 51) !important; width: 10em;">&lt;span style=" color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;" &gt;F&lt;/span&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">TD</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;" &gt;T&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(179, 179, 179, 51) !important; width: 10em;">&lt;span style=" color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;" &gt;T&lt;/span&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 4em; font-weight: bold; color: red !important; border-right: 1px solid;">RSup</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;" &gt;F&lt;/span&gt;</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(230, 230, 230, 51) !important; width: 10em;">&lt;span style=" color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;" &gt;F&lt;/span&gt;</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> ELECTRE: Relación Superación: alpha = 0.55, vd=(Inf,5,Inf,Inf,15,50,Inf)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+<p>Con estas tablas podemos comprobar que el par (a1,a3) supera ambos tests (el de concordancia y el de discordancia), pero que el par (a3,a1) no supera el test de concordancia. Por ello, la alternativa 1 (club Mirador) supera a la alternativa 3 (club Río Grande)</p>
+</section>
+<section id="resolución-con-promethee-con-r." class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="resolución-con-promethee-con-r."><span class="header-section-number">2.4</span> Resolución con Promethee con R.</h2>
+<p>A continuación voy a resolver el problema con la técnica de Promethee. Para ello, voy usar la misma matriz de decisión, los mismos pesos (para poder comparar y porque realmente muestran mis preferencias). Para las funciones de preferencia, voy a tomar una distinta en cada criterio.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
