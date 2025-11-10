@@ -78,10 +78,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="Trabajo2_Reverte_Pagola_Angela_files/libs/grViz-binding-1.0.11/grViz.js"></script>
 
-<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-
-<script src="Trabajo2_Reverte_Pagola_Angela_files/libs/formattable_widget-binding-0.2.1/formattable_widget.js"></script>
-
 <script src="Trabajo2_Reverte_Pagola_Angela_files/libs/kePrint-0.0.1/kePrint.js"></script>
 
 <link href="Trabajo2_Reverte_Pagola_Angela_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
@@ -98,14 +94,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#presentacion-del-problema." id="toc-presentacion-del-problema." class="nav-link active" data-scroll-target="#presentacion-del-problema."><span class="header-section-number">1</span> PRESENTACION DEL PROBLEMA.</a></li>
+  <li><a href="#presentación-del-problema." id="toc-presentación-del-problema." class="nav-link active" data-scroll-target="#presentación-del-problema."><span class="header-section-number">1</span> PRESENTACIÓN DEL PROBLEMA.</a></li>
   <li><a href="#solución-problema." id="toc-solución-problema." class="nav-link" data-scroll-target="#solución-problema."><span class="header-section-number">2</span> SOLUCIÓN PROBLEMA.</a>
   <ul class="collapse">
   <li><a href="#resolución-con-ahp-con-r." id="toc-resolución-con-ahp-con-r." class="nav-link" data-scroll-target="#resolución-con-ahp-con-r."><span class="header-section-number">2.1</span> Resolución con AHP con R.</a></li>
   <li><a href="#resolución-con-ahp-con-librería-ahp." id="toc-resolución-con-ahp-con-librería-ahp." class="nav-link" data-scroll-target="#resolución-con-ahp-con-librería-ahp."><span class="header-section-number">2.2</span> Resolución con AHP con librería AHP.</a></li>
-  <li><a href="#resolución-con-electre." id="toc-resolución-con-electre." class="nav-link" data-scroll-target="#resolución-con-electre."><span class="header-section-number">2.3</span> Resolución con Electre.</a></li>
-  <li><a href="#resolución-con-promethee-con-r." id="toc-resolución-con-promethee-con-r." class="nav-link" data-scroll-target="#resolución-con-promethee-con-r."><span class="header-section-number">2.4</span> Resolución con Promethee con R.</a></li>
+  <li><a href="#resolución-con-electre." id="toc-resolución-con-electre." class="nav-link" data-scroll-target="#resolución-con-electre."><span class="header-section-number">2.3</span> Resolución con Electre.</a>
+  <ul class="collapse">
+  <li><a href="#electre-completo-con-tablas." id="toc-electre-completo-con-tablas." class="nav-link" data-scroll-target="#electre-completo-con-tablas."><span class="header-section-number">2.3.1</span> Electre completo con tablas.</a></li>
   </ul></li>
+  <li><a href="#resolución-con-promethee-con-r." id="toc-resolución-con-promethee-con-r." class="nav-link" data-scroll-target="#resolución-con-promethee-con-r."><span class="header-section-number">2.4</span> Resolución con Promethee con R.</a>
+  <ul class="collapse">
+  <li><a href="#promethee-i" id="toc-promethee-i" class="nav-link" data-scroll-target="#promethee-i"><span class="header-section-number">2.4.1</span> Promethee I</a></li>
+  <li><a href="#promethee-ii" id="toc-promethee-ii" class="nav-link" data-scroll-target="#promethee-ii"><span class="header-section-number">2.4.2</span> Promethee II</a></li>
+  </ul></li>
+  <li><a href="#promethee-windows." id="toc-promethee-windows." class="nav-link" data-scroll-target="#promethee-windows."><span class="header-section-number">2.5</span> Promethee Windows.</a></li>
+  <li><a href="#método-axiomático-de-arrow-y-raymond" id="toc-método-axiomático-de-arrow-y-raymond" class="nav-link" data-scroll-target="#método-axiomático-de-arrow-y-raymond"><span class="header-section-number">2.6</span> Método Axiomático de Arrow y Raymond</a>
+  <ul class="collapse">
+  <li><a href="#análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond" id="toc-análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond" class="nav-link" data-scroll-target="#análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond"><span class="header-section-number">2.6.1</span> Análisis paramétrico o de sensibilidad aplicación Método axiomático de Arrow y Raymond</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conclusión." id="toc-conclusión." class="nav-link" data-scroll-target="#conclusión."><span class="header-section-number">3</span> CONCLUSIÓN.</a></li>
+  <li><a href="#bibliografía." id="toc-bibliografía." class="nav-link" data-scroll-target="#bibliografía."><span class="header-section-number">4</span> BIBLIOGRAFÍA.</a></li>
   </ul>
 </nav>
 </div>
@@ -137,19 +147,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="presentacion-del-problema." class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> PRESENTACION DEL PROBLEMA.</h1>
+<section id="presentación-del-problema." class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> PRESENTACIÓN DEL PROBLEMA.</h1>
 <p>Mi pasión siempre han sido los deportes. He practicado muchos como: natación, baloncesto, tenis o fútbol sala. Este año, quiero volver a jugar al tenis y me encuentro emocionada. El problema es que tengo muchas opciones de clubes de tenis donde apuntarme y no sé qué hacer.</p>
 <p>Para mí, el deporte es algo esencial en mi vida y, aunque no me quiero dedicar de forma profesional, me gusta mucho que los entrenamientos sean muy intensos y lo más profesionales posibles. Sin embargo, creo que el ambiente debe ser divertido y relajado. Tan importante es hacer deporte serio como disfrutarlo y pasarlo bien.</p>
 <p>Por otro lado, durante el día estoy muy ajetreada, por lo que es importante no perder tiempo en el desplazamiento. Lo ideal sería que el club estuviera cerca de casa o, por lo menos, que tuviera fácil aparcamiento.</p>
 <p>En cuanto a lo económico, para mí no es tan importante. Los precios son todos parecidos, aunque sí es verdad que algunos incluyen más servicios que otros. De hecho, es importante destacar que no todos los clubes tienen las mismas instalaciones. A mi me encanta alquilar pistas con mi hermano y amigos para jugar. Y no todos los clubes tienen las mismas facilidades.</p>
 <p>Veamos ahora las diferentes alternativas y una breve presentación de ellas:</p>
 <ul>
-<li><p>Club Mirador: Club muy cercano a mi casa (5 mins andando). Es un club social y pequeño, pero muy familiar. Cuenta con una escuela de tenis que lleva este deporte también en otros clubes. Todos los monitores son profesionales y muy cercanos. El problema es que cuenta solo con una pista de tenis, por lo que, por un lado, las clases de tenis tienen un alto número de alumnos y, por otro, es dicícil reservarla, pues siempre está ocupada. Esta escuela de tenis se preocupa mucho por hacer eventos y torneos. Siempre con el objetivo de pasarlo bien. Es perfecta para tener el tenis como ocio. Es bastante económica.</p></li>
+<li><p>Club Mirador: Club muy cercano a mi casa (5 mins andando). Es un club social y pequeño, pero muy familiar. Cuenta con una escuela de tenis que lleva este deporte también en otros clubes. Todos los monitores son profesionales y muy cercanos. El problema es que cuenta solo con una pista de tenis, por lo que, por un lado, las clases de tenis tienen un alto número de alumnos y, por otro, es difícil reservarla, pues siempre está ocupada. Esta escuela de tenis se preocupa mucho por hacer eventos y torneos. Siempre con el objetivo de pasarlo bien. Es perfecta para tener el tenis como ocio. Es bastante económica.</p></li>
 <li><p>Club Bernier: aunque también es un club social, su objetivo principal es el tenis. Bastante profesional, pero sin perder de vista el ocio y el disfrute. Está también muy cerca de casa (10 mins andando). Cuenta con 4 pistas de tenis, gimnasio, pistas de padel y bar/restaurante. También realizan muchos partidos y torneos en los que te puedes poner a prueba como tenista. No es tan económico.</p></li>
-<li><p>Club de tenis Río Grande: club dedicado al tenis. Este club se dedica al tenis, aunque cuenta también con otros muchos servicios como piscina, sala fitness, pistas de padel o campos de fútbol. Es un club muy grande, con 16 pistas de tenis, de las cuales 12 son de tierra batida y en muy buen estado. Hay grupos de entrenamientos en función de tus objetivos: ocio, entrenamiento intenso, mejorar la técnica… Se encuentra a 5 mins en coche de mi casa y tiene parking. Hay buen ambiente, pero al ser tran grande, se pierde un poco la familiaridad. Es más caro.</p></li>
+<li><p>Club de tenis Río Grande: club dedicado al tenis. Este club se dedica al tenis, aunque cuenta también con otros muchos servicios como piscina, sala fitness, pistas de padel o campos de fútbol. Es un club muy grande, con 16 pistas de tenis, de las cuales 12 son de tierra batida y en muy buen estado. Hay grupos de entrenamientos en función de tus objetivos: ocio, entrenamiento intenso, mejorar la técnica… Se encuentra a 5 mins en coche de mi casa y tiene parking. Hay buen ambiente, pero al ser tan grande, se pierde un poco la familiaridad. Es más caro.</p></li>
 <li><p>Real Club de Tenis Betis: club histórico de tenis en Sevilla. Reconocido a nivel nacional. Ideal si quieres mejorar y entrenar de forma intensa. Realiza grandes torneos y está hermanado con otros clubes de tenis de España. Cuenta con 6 pistas de tenis de tierra batida, gimansio, pistas de padel y piscina. Se sitúa en Sevilla, por lo que está a 15 minutos en coche, más el tiempo de aparcamiento. Es caro.</p></li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="solución-problema." class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> SOLUCIÓN PROBLEMA.</h1>
@@ -162,6 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Entrenamientos: aunque mi principal objetivo sea divertirme mientras hago deporte, para mí es esencial que los entrenamientos sean intensos y competitivos.</p></li>
 </ul>
 <p>Una vez presentados el problema, los criterios y las alternativas, procedemos a aplicar las diferentes técnicas de decisión multicriterio.</p>
+<div style="page-break-after: always;"></div>
 <section id="resolución-con-ahp-con-r." class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="resolución-con-ahp-con-r."><span class="header-section-number">2.1</span> Resolución con AHP con R.</h2>
 <p>Con toda la información anterior, voy a contruir las tablas de comparación 2 a 2. Y calculamos los pesos locales:</p>
@@ -425,7 +437,7 @@ Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
 </div>
 </div>
 <p>CONCLUSIONES: Viendo los resultados, elegiríamos el club Mirador, con un 34,54%, seguido del club Bernier con un 22.73%. Las interpretaciones de por qué han salido estos resultados, la vamos a ver mejor con la librería AHP como he comentado anteriormente.</p>
-<p>Veámos ahora la inconsistencia de cada una de las tablas:</p>
+<p>Veamos ahora la inconsistencia de cada una de las tablas:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia1 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(tab1)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia1<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia1<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -479,10 +491,11 @@ Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
 </div>
 </div>
 <p>Podemos comprobar que todas las matrices tienen consistencia aceptable. Por lo que las valoraciones que hemos puesto tienen sentido. No hay errores de inconsistencia y en las tablas no se forman ciclos entre preferencias de las alternativas y criterios.</p>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="resolución-con-ahp-con-librería-ahp." class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="resolución-con-ahp-con-librería-ahp."><span class="header-section-number">2.2</span> Resolución con AHP con librería AHP.</h2>
-<p>Ahora vamos a hacer lo mismo, pero con la ayuda de la libreria AHP. Para ello, he plasmado toda la información en el fichero esquema.ahp. Deben salir las mismas conclusiones, pero vamos a comentarlas en esta sección, pues la salida es mucho más visual e intuitiva.</p>
+<p>Ahora vamos a hacer lo mismo, pero con la ayuda de la librería AHP. Para ello, he plasmado toda la información en el fichero esquema.ahp. Deben salir las mismas conclusiones, pero vamos a comentarlas en esta sección, pues la salida es mucho más visual e intuitiva.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ahp)</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">Load</span>(<span class="st">"esquema.ahp"</span>)</span>
@@ -491,8 +504,8 @@ Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Visualize</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-be72239f081a2a5f9f67" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-be72239f081a2a5f9f67">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"TB\"]\n\n\n\n  \"1\" [label = \"Elegir el club donde practicar tenis\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"2\" [label = \"Ambiente\", tooltip = \"priority: 25.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"3\" [label = \"Familiaridad\", tooltip = \"priority: 66.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"4\" [label = \"Eventos deportivos\", tooltip = \"priority: 33.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"5\" [label = \"Servicios\", tooltip = \"priority: 10.4%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"6\" [label = \"Pistas de tenis\", tooltip = \"priority: 85.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"7\" [label = \"Instalaciones\", tooltip = \"priority: 14.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"8\" [label = \"Ubicación y accesibilidad\", tooltip = \"priority: 41.6%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"9\" [label = \"Precio\", tooltip = \"priority: 4.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"10\" [label = \"Entrenamientos\", tooltip = \"priority: 18.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"11\" [label = \"Alternatives\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"12\" [label = \"Club Mirador\", tooltip = \"priority: 51.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"13\" [label = \"Club Bernier\", tooltip = \"priority: 27.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"14\" [label = \"Club Río Grande\", tooltip = \"priority: 13.8%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"15\" [label = \"Club Tenis Betis\", tooltip = \"priority: 7.4%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"5\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"10\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"4\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"6\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"3\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"4\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"7\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"8\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"9\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"10\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"11\"->\"12\" [penwidth = \"2\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"13\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"14\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"15\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-99c17f1d9bea8e69b525" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-99c17f1d9bea8e69b525">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"TB\"]\n\n\n\n  \"1\" [label = \"Elegir el club donde practicar tenis\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"2\" [label = \"Ambiente\", tooltip = \"priority: 25.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"3\" [label = \"Familiaridad\", tooltip = \"priority: 66.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"4\" [label = \"Eventos deportivos\", tooltip = \"priority: 33.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"5\" [label = \"Servicios\", tooltip = \"priority: 10.4%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"6\" [label = \"Pistas de tenis\", tooltip = \"priority: 85.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"7\" [label = \"Instalaciones\", tooltip = \"priority: 14.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"8\" [label = \"Ubicación y accesibilidad\", tooltip = \"priority: 41.6%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"9\" [label = \"Precio\", tooltip = \"priority: 4.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"10\" [label = \"Entrenamientos\", tooltip = \"priority: 18.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"11\" [label = \"Alternatives\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"12\" [label = \"Club Mirador\", tooltip = \"priority: 51.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"13\" [label = \"Club Bernier\", tooltip = \"priority: 27.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"14\" [label = \"Club Río Grande\", tooltip = \"priority: 13.8%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"15\" [label = \"Club Tenis Betis\", tooltip = \"priority: 7.4%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"5\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"8\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"10\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"3\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"4\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"6\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"3\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"4\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"7\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"8\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"9\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"10\"->\"11\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"11\"->\"12\" [penwidth = \"2\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"13\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"14\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"11\"->\"15\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -506,11 +519,9 @@ Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co">#MEJOR DECISIÓN: ALTERNATIVA B (peso global del 53.1%)</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co">#pesos locales:</span></span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>t2 <span class="ot">=</span> <span class="fu">AnalyzeTable</span>(datos, <span class="at">variable =</span> <span class="st">"priority"</span>)</span>
-<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">export_formattable</span>(t2, <span class="at">file =</span> <span class="st">"tablaahpLocal.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pesos locales:</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>t2 <span class="ot">=</span> <span class="fu">AnalyzeTable</span>(datos, <span class="at">variable =</span> <span class="st">"priority"</span>)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="fu">export_formattable</span>(t2, <span class="at">file =</span> <span class="st">"tablaahpLocal.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -518,16 +529,8 @@ Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>formattable<span class="sc">::</span><span class="fu">as.htmlwidget</span>(t1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="htmlwidget-ed42ed6a36e5731a8664" class="formattable_widget html-widget" style="width:100%;height:480px;" width="100%" height="480"></div>
-<script type="application/json" data-for="htmlwidget-ed42ed6a36e5731a8664">{"x":{"html":"<table class=\"table table-condensed\">\n <thead>\n  <tr>\n   <th style=\"text-align:right;\">   <\/th>\n   <th style=\"text-align:right;\"> Weight <\/th>\n   <th style=\"text-align:right;\"> Club Mirador <\/th>\n   <th style=\"text-align:right;\"> Club Bernier <\/th>\n   <th style=\"text-align:right;\"> Club Río Grande <\/th>\n   <th style=\"text-align:right;\"> Club Tenis Betis <\/th>\n   <th style=\"text-align:right;\"> Inconsistency <\/th>\n  <\/tr>\n <\/thead>\n<tbody>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 0em\">Elegir el club donde practicar tenis<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c1cdc1\">100.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">34.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #b2a8b2\">22.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #b3a9b3\">22.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #bbb1bb\">20.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed9b0\">\n  <i class><\/i>\n  7.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ubicación y accesibilidad           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e5eae5\">41.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #b7adb7\">21.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #d4ced4\">12.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe8eb\">5.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9f9f9\">1.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae\">\n  <i class><\/i>\n  7.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ambiente                            <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eff2ef\">25.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dfdbdf\">9.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ebe9eb\">5.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efedef\">4.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eae8ea\">6.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Familiaridad                        <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f5f7f5\">17.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e1dde1\">8.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efedef\">4.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">2.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafafa\">1.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefcfa\">\n  <i class><\/i>\n  0.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Eventos deportivos                  <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafbfa\">8.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fbfbfb\">1.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">2.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efecef\">4.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f2e1c2\">\n  <i class><\/i>\n  5.7%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Entrenamientos                      <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f4f6f4\">18.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fcfbfc\">0.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">2.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efedef\">4.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dbd6db\">10.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f1dfbe\">\n  <i class><\/i>\n  6.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Servicios                           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9faf9\">10.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfcfd\">0.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafafa\">1.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e8e4e8\">6.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9f8f9\">1.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Pistas de tenis                     <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafbfa\">8.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fcfbfc\">0.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eae7ea\">6.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f9f8f9\">1.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efdab3\">\n  <i class><\/i>\n  7.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Instalaciones                       <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">1.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefefe\">0.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fcfbfc\">0.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefefe\">0.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6ecd8\">\n  <i class><\/i>\n  3.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Precio                              <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">4.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6f5f6\">2.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fbfbfb\">1.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fdfdfd\">0.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefdfe\">0.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #faf5eb\">\n  <i class><\/i>\n  1.8%\n<\/span> <\/td>\n  <\/tr>\n<\/tbody>\n<\/table>"},"evals":[],"jsHooks":[]}</script>
-</div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>formattable<span class="sc">::</span><span class="fu">as.htmlwidget</span>(t2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="htmlwidget-f0f7dc080e76d615dc62" class="formattable_widget html-widget" style="width:100%;height:480px;" width="100%" height="480"></div>
-<script type="application/json" data-for="htmlwidget-f0f7dc080e76d615dc62">{"x":{"html":"<table class=\"table table-condensed\">\n <thead>\n  <tr>\n   <th style=\"text-align:right;\">   <\/th>\n   <th style=\"text-align:right;\"> Priority <\/th>\n   <th style=\"text-align:right;\"> Club Mirador <\/th>\n   <th style=\"text-align:right;\"> Club Bernier <\/th>\n   <th style=\"text-align:right;\"> Club Río Grande <\/th>\n   <th style=\"text-align:right;\"> Club Tenis Betis <\/th>\n   <th style=\"text-align:right;\"> Inconsistency <\/th>\n  <\/tr>\n <\/thead>\n<tbody>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 0em\">Elegir el club donde practicar tenis<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c1cdc1\">100.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed9b0\">\n  <i class><\/i>\n  7.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ubicación y accesibilidad           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e6ebe6\">41.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">51.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #bab0ba\">30.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dedade\">14.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6f5f6\">3.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eed8ae\">\n  <i class><\/i>\n  7.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Ambiente                            <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f1f3f1\">25.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Familiaridad                        <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #d6ded6\">66.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">51.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c0b8c0\">27.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #dfdbdf\">13.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eeebee\">7.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fefcfa\">\n  <i class><\/i>\n  0.4%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Eventos deportivos                  <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ecefec\">33.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f2f0f2\">5.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e2e6\">12.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #c7bfc7\">26.6%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">55.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f2e1c2\">\n  <i class><\/i>\n  5.7%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Entrenamientos                      <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f5f7f5\">18.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f5f4f5\">4.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e7e4e7\">11.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #cdc6cd\">25.0%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">58.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f1dfbe\">\n  <i class><\/i>\n  6.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Servicios                           <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #fafbfa\">10.4%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\"><\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">\n  <i class><\/i>\n  0.0%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Pistas de tenis                     <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #cad4ca\">85.7%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f7f6f7\">4.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #eeebee\">9.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">67.8%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e0dce0\">17.9%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #efdab3\">\n  <i class><\/i>\n  7.1%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 2em\">Instalaciones                       <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f8f9f8\">14.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e2dee2\">13.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #d2ccd2\">21.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">55.3%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e9e6e9\">10.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f6ecd8\">\n  <i class><\/i>\n  3.6%\n<\/span> <\/td>\n  <\/tr>\n  <tr>\n   <td style=\"text-align:right;\"> <span style=\"white-space: nowrap; text-align: left; float: left; font-weight: bold; text-indent: 1em\">Precio                              <\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff\">4.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #8b7b8b\">57.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #cfc8cf\">23.5%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #e6e2e6\">12.2%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #f0eef0\">7.1%<\/span> <\/td>\n   <td style=\"text-align:right;\"> <span style=\"display: block; padding: 0 4px; border-radius: 4px; background-color: #faf5eb\">\n  <i class><\/i>\n  1.8%\n<\/span> <\/td>\n  <\/tr>\n<\/tbody>\n<\/table>"},"evals":[],"jsHooks":[]}</script>
-</div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co">#formattable::as.htmlwidget(t1)</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="co">#formattable::as.htmlwidget(t2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>CONCLUSIONES:</p>
 <p>Viendo las tablas podemos sacar muchas conclusiones, por ejemplo:</p>
@@ -540,6 +543,7 @@ Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
 <li><p>La diferencia de pesos en los criterios hace realmente que nos decantemos por una u otra alternativa.</p></li>
 <li><p>Se puede comprobar que todas las comparaciones tienen una inconsistencia de menos de un 10%, por lo que hemos valorado con buen criterio y sin muchas inconsistencias.</p></li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="resolución-con-electre." class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="resolución-con-electre."><span class="header-section-number">2.3</span> Resolución con Electre.</h2>
@@ -555,17 +559,17 @@ Tenis Betis       8    6.00  3.0000000   1.0000000</code></pre>
 </ul>
 <p>Los de minimizar, los añadimos directamente con el menos.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>matrizDec <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(</span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">4</span>,  <span class="dv">1</span>,  <span class="dv">50</span>,  <span class="sc">-</span><span class="dv">5</span>,  <span class="sc">-</span><span class="dv">45</span>, <span class="dv">60</span>,</span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">75</span>,  <span class="dv">3</span>,  <span class="dv">4</span>,  <span class="dv">60</span>,  <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">55</span>, <span class="dv">75</span>,</span>
-<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">50</span>,  <span class="dv">2</span>,  <span class="dv">16</span>, <span class="dv">90</span>,  <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">60</span>, <span class="dv">85</span>,</span>
-<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">25</span>,  <span class="dv">1</span>,  <span class="dv">6</span>,  <span class="dv">20</span>,  <span class="sc">-</span><span class="dv">20</span>, <span class="sc">-</span><span class="dv">70</span>, <span class="dv">100</span>),</span>
-<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">numalternativas =</span> <span class="dv">4</span>,</span>
-<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">numcriterios =</span> <span class="dv">7</span>,</span>
-<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">v.nombresalt =</span> <span class="fu">c</span>(<span class="st">"Mirador"</span>,<span class="st">"Bernier"</span>,<span class="st">"Río Grande"</span>,<span class="st">"Tenis Betis"</span>),</span>
-<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">v.nombrescri =</span> <span class="fu">c</span>(<span class="st">'Fam.'</span>, <span class="st">'Eventos'</span>, <span class="st">'Nº Pistas'</span>, <span class="st">'Instalaciones'</span>, <span class="st">'Ubicación'</span>, <span class="st">'Precio'</span>,<span class="st">'Entr.'</span>)</span>
-<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a>matrizDec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>matrizDec <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">4</span>,  <span class="dv">1</span>,  <span class="dv">50</span>,  <span class="sc">-</span><span class="dv">5</span>,  <span class="sc">-</span><span class="dv">45</span>, <span class="dv">60</span>,</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">75</span>,  <span class="dv">3</span>,  <span class="dv">4</span>,  <span class="dv">60</span>,  <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">55</span>, <span class="dv">75</span>,</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">50</span>,  <span class="dv">2</span>,  <span class="dv">16</span>, <span class="dv">90</span>,  <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">60</span>, <span class="dv">85</span>,</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">25</span>,  <span class="dv">1</span>,  <span class="dv">6</span>,  <span class="dv">20</span>,  <span class="sc">-</span><span class="dv">20</span>, <span class="sc">-</span><span class="dv">70</span>, <span class="dv">100</span>),</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">numalternativas =</span> <span class="dv">4</span>,</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">numcriterios =</span> <span class="dv">7</span>,</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">v.nombresalt =</span> <span class="fu">c</span>(<span class="st">"Mirador"</span>,<span class="st">"Bernier"</span>,<span class="st">"Río Grande"</span>,<span class="st">"Tenis Betis"</span>),</span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">v.nombrescri =</span> <span class="fu">c</span>(<span class="st">'Fam.'</span>, <span class="st">'Eventos'</span>, <span class="st">'Nº Pistas'</span>, <span class="st">'Instalaciones'</span>, <span class="st">'Ubicación'</span>, <span class="st">'Precio'</span>,<span class="st">'Entr.'</span>)</span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a>matrizDec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Fam. Eventos Nº Pistas Instalaciones Ubicación Precio Entr.
 Mirador      100       4         1            50        -5    -45    60
@@ -584,17 +588,17 @@ Tenis Betis   25       1         6            20       -20    -70   100</code></
 </ul>
 <p>Resolvemos electre con esta información:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>solElec <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.7</span>,</span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="cn">TRUE</span></span>
-<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec</span></span>
-<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>solElec <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.7</span>,</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="cn">TRUE</span></span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec</span></span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
 no ASCII</code></pre>
@@ -606,7 +610,7 @@ no ASCII</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>solElec<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>solElec<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Mirador Río Grande 
          1          3 </code></pre>
@@ -614,17 +618,17 @@ no ASCII</code></pre>
 </div>
 <p>Viendo este grafo y viendo el núcleo obtenido, vamos a modificar el alpha para que nos quedemos solo con una alternativa. Es decir, ponemos más restrictivo el superar el test de concordancia.Y nos quedamos solo con las alternativas posibles: club Mirador y club Río Grande:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>solElec2 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.55</span>,</span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
-<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
-<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec2</span></span>
-<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec2<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>solElec2 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.55</span>,</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec2</span></span>
+<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec2<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
 no ASCII</code></pre>
@@ -636,7 +640,7 @@ no ASCII</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>solElec2<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>solElec2<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Mirador Río Grande 
          1          2 </code></pre>
@@ -644,17 +648,17 @@ no ASCII</code></pre>
 </div>
 <p>Puesto que todavía no hemos llegado a ninguna solución, vamos a modificar también el test de discordancia. Como en realidad no necesito tantas pistas de tenis y, además, siempre tengo la opción de alquilarla en cualquier otro lugar, voy a modificar esa restricción.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>solElec3 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
-<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
-<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.55</span>,</span>
-<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="cn">Inf</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
-<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
-<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec3</span></span>
-<span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-11"><a href="#cb89-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec3<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>solElec3 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>  matrizDec,</span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pesos.criterios =</span> crisub,</span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">nivel.concordancia.minimo.alpha =</span> <span class="fl">0.55</span>,</span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="cn">Inf</span>, <span class="dv">5</span>, <span class="cn">Inf</span>, <span class="cn">Inf</span>, <span class="dv">15</span>,<span class="dv">50</span>,<span class="cn">Inf</span>),</span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">que.alternativas =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a><span class="co">#solElec3</span></span>
+<span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-11"><a href="#cb88-11" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(solElec3<span class="sc">$</span>relacion.dominante)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
 no ASCII</code></pre>
@@ -666,7 +670,7 @@ no ASCII</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>solElec3<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>solElec3<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mirador 
       1 </code></pre>
@@ -674,13 +678,16 @@ no ASCII</code></pre>
 </div>
 <p>CONCLUSIÓN:</p>
 <p>Según el procedimiento de Electre también llegamos a la misma conclusión: quedarnos con la alternativa del club Mirador. Con los datos que le he proporcionado, ha sido complicada la elección entre las alternativas de club Mirador y de club Río Grande. Sin embargo, cambiando un poco las restricciones de los test de concordancia y discordancia en función de nuestro criterio y lógica, hemos podido concluir y tomar una decisión.</p>
+<div style="page-break-after: always;"></div>
+<section id="electre-completo-con-tablas." class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="electre-completo-con-tablas."><span class="header-section-number">2.3.1</span> Electre completo con tablas.</h3>
 <p>Por otro lado, si queremos ver los pasos intermedios y las tablas de concordancia y discordancia, lo detallo a continuación. (Detallo solo con las restricciones finales)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Electre con todos los pasos:</span></span>
-<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>completo <span class="ot">=</span> <span class="fu">func_ELECTRE_Completo</span>(solElec3)</span>
-<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="co">#aqui las tablas de los índices:</span></span>
-<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>MIndices<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Electre con todos los pasos:</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>completo <span class="ot">=</span> <span class="fu">func_ELECTRE_Completo</span>(solElec3)</span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="co">#aquí las tablas de los índices:</span></span>
+<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>MIndices<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -737,8 +744,8 @@ no ASCII</code></pre>
 
 
 </div>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla del test de concordancia:</span></span>
-<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TConcordancia<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla del test de concordancia:</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TConcordancia<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -795,8 +802,8 @@ no ASCII</code></pre>
 
 
 </div>
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla de discordancia:</span></span>
-<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TDiscordancia<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla de discordancia:</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TDiscordancia<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -853,8 +860,8 @@ no ASCII</code></pre>
 
 
 </div>
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla de superacion de los dos test:</span></span>
-<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TSuperacion<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co">#tabla de superación de los dos test:</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>completo<span class="sc">$</span>TSuperacion<span class="sc">$</span>KE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -913,11 +920,337 @@ no ASCII</code></pre>
 </div>
 </div>
 <p>Con estas tablas podemos comprobar que el par (a1,a3) supera ambos tests (el de concordancia y el de discordancia), pero que el par (a3,a1) no supera el test de concordancia. Por ello, la alternativa 1 (club Mirador) supera a la alternativa 3 (club Río Grande)</p>
+<div style="page-break-after: always;"></div>
+</section>
 </section>
 <section id="resolución-con-promethee-con-r." class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="resolución-con-promethee-con-r."><span class="header-section-number">2.4</span> Resolución con Promethee con R.</h2>
+<section id="promethee-i" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="promethee-i"><span class="header-section-number">2.4.1</span> Promethee I</h3>
 <p>A continuación voy a resolver el problema con la técnica de Promethee. Para ello, voy usar la misma matriz de decisión, los mismos pesos (para poder comparar y porque realmente muestran mis preferencias). Para las funciones de preferencia, voy a tomar una distinta en cada criterio.</p>
+<ul>
+<li>Familiaridad: preferencia lineal (q=5,p=30)</li>
+<li>Eventos deportivos: cuasi criterio (q=0.5)</li>
+<li>Nº Pistas: criterio con preferencia lineal y área de indiferencia (q=2,p=8)</li>
+<li>Instalaciones: criterio nivel (q=5,p=30)</li>
+<li>Ubicación: criterio usual (p=8)</li>
+<li>Precio: preferencia lineal (q=3,p=12)</li>
+<li>Entrenamientos: cuasi criterio (q=1)</li>
+</ul>
+<p>Las funciones de preferencias quedarían así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co">#                  num fun  q    p   s</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>tab.fpref <span class="ot">=</span> <span class="fu">matrix</span>( <span class="fu">c</span>(<span class="dv">3</span>,    <span class="dv">5</span>,  <span class="dv">30</span>,  <span class="dv">0</span>,</span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">2</span>,  <span class="fl">0.5</span>,   <span class="dv">0</span>,  <span class="dv">0</span>,</span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">5</span>,    <span class="dv">2</span>,   <span class="dv">8</span>,  <span class="dv">0</span>,</span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">4</span>,    <span class="dv">5</span>,  <span class="dv">30</span>,  <span class="dv">0</span>,</span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">1</span>,    <span class="dv">0</span>,   <span class="dv">8</span>,  <span class="dv">0</span>,</span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">3</span>,    <span class="dv">3</span>,  <span class="dv">12</span>,  <span class="dv">0</span>,</span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">2</span>,    <span class="dv">1</span>,   <span class="dv">0</span>,  <span class="dv">0</span>),<span class="at">ncol=</span><span class="dv">4</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Aplico Promethee I en primer lugar:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_i</span>(matrizDec,crisub,tab.fpref)</span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$tabla.indices
+              Mirador   Bernier Río Grande Tenis Betis
+Mirador     0.0000000 0.6776375  0.7130000   0.7278187
+Bernier     0.2055229 0.0000000  0.2444791   0.7278187
+Río Grande  0.2870000 0.2870000  0.0000000   0.7813375
+Tenis Betis 0.2277406 0.1833000  0.1833000   0.0000000
+
+$vflujos.ent
+    Mirador     Bernier  Río Grande Tenis Betis 
+  2.1184562   1.1778208   1.3553375   0.5943406 
+
+$vflujos.sal
+    Mirador     Bernier  Río Grande Tenis Betis 
+  0.7202635   1.1479375   1.1407791   2.2369749 
+
+$tablarelacionsupera
+            Mirador Bernier Río Grande Tenis Betis
+Mirador         0.5     1.0        1.0         1.0
+Bernier         0.0     0.5        0.0         1.0
+Río Grande      0.0     1.0        0.5         1.0
+Tenis Betis     0.0     0.0        0.0         0.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(qgraph)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cargando paquete requerido: qgraph</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qgraph</span>(tab.Pthee.i<span class="sc">$</span>tablarelacionsupera)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Según los resultados del Promethee I, Mirador aparece como la alternativa con mayor capacidad de dominancia (mayor flujo entrante), seguida de Río Grande y Bernier, mientras que Tenis Betis resulta la menos preferida al presentar el menor flujo de entrada. En cuanto al flujo saliente (cuánto las alternativas son dominadas por las demás), la menor es club Mirador, seguido de Río Grande, Bernier y, por último, Tenis Betis. La matriz de relación de superación confirma que el club Mirador domina al resto de clubes, evidenciando una clara ventaja respecto a los criterios considerados.</p>
+<p>Casualmente ninguna es incomparable ni indiferente, pues los flujos entrantes y salientes están ordenados de la misma manera. Es decir, no existe ninguna alternativa que tenga mejor flujo entrante que otra, pero peor flujo saliente. Por lo que las conclusiones son mucho mejores. Las alernativas con Promethee I quedan ya perfectamente ordenadas.</p>
+<div style="page-break-after: always;"></div>
 </section>
+<section id="promethee-ii" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="promethee-ii"><span class="header-section-number">2.4.2</span> Promethee II</h3>
+<p>Para terminar de confirmar nuestras hipótesis, vamos a realizar Promethee II y obtener el ranking final según los flujos netos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_ii</span>(matrizDec,crisub,tab.fpref)</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(qgraph)</span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qgraph</span>(tab.Pthee.ii<span class="sc">$</span>tablarelacionsupera)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ordenacion final promethee 2:</span></span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii<span class="sc">$</span>vflujos.netos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Mirador     Bernier  Río Grande Tenis Betis 
+ 1.39819266  0.02988331  0.21455833 -1.64263430 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(tab.Pthee.ii<span class="sc">$</span>vflujos.netos,<span class="at">decreasing=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 3 2 4</code></pre>
+</div>
+</div>
+<p>CONCLUSIONES PROMETHEE:</p>
+<p>Como habíamos visto antes, la mejor alternativa según Promethee es el club Mirador, seguida por Río Grande, Bernier y, por último, Tenis Betis.</p>
+<p>Además, se puede comprobar la gran diferencia entre los distintos flujos netos, por lo que Promethee realiza una buena diferencia entre las distintas alternativas. También, cabe destacar que la única alternativa con flujo neto negativo es Tenis Betis, por lo que se puede decir que, en general, esta alternativa es más dominada de lo que ella domina.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="promethee-windows." class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="promethee-windows."><span class="header-section-number">2.5</span> Promethee Windows.</h2>
+<p>Veamos en primer lugar el planteamiento del problema con Windows. Voy a usar la opción de poner los valores de los criterios de minimizar en positivo, pero especificando si quiero minimizar o maximizar los criterios.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">res =</span> <span class="fu">multicriterio.metodo.promethee_windows</span>(matrizDec,tab.fpref,crisub,</span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">fminmax =</span> <span class="fu">c</span>(<span class="st">"max"</span>,<span class="st">"max"</span>,<span class="st">"max"</span>,<span class="st">"max"</span>,<span class="st">"min"</span>,<span class="st">"min"</span>,<span class="st">"max"</span>) ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Escenario
+                       Criterio1     Criterio2     Criterio3    Criterio4   
+Min/Max                "max"         "max"         "max"        "max"       
+Pesos                  "0.17027518"  "0.08512482"  "0.08888127" "0.01481873"
+Funciones Preferencias "V-shape (3)" "U-shape (2)" "Linear (5)" "Level (4)" 
+Q: Indiferencia        "5"           "0.5"         "2"          "5"         
+P: Preferencia         "30"          "0"           "8"          "30"        
+S: Gausiano            "0"           "0"           "0"          "0"         
+Minimo                 "25"          "1"           "1"          "20"        
+Maximo                 "100"         "4"           "16"         "90"        
+Media                  "62.5"        "2.5"         "6.75"       "55"        
+Desviacion Tipica      "27.95"       "1.12"        "5.63"       "25"        
+Mirador                "100"         "4"           "1"          "50"        
+Bernier                "75"          "3"           "4"          "60"        
+Río Grande             "50"          "2"           "16"         "90"        
+Tenis Betis            "25"          "1"           "6"          "20"        
+                       Criterio5   Criterio6     Criterio7    
+Min/Max                "min"       "min"         "max"        
+Pesos                  "0.4157"    "0.0419"      "0.1833"     
+Funciones Preferencias "Usual (1)" "V-shape (3)" "U-shape (2)"
+Q: Indiferencia        "0"         "3"           "1"          
+P: Preferencia         "8"         "12"          "0"          
+S: Gausiano            "0"         "0"           "0"          
+Minimo                 "5"         "45"          "60"         
+Maximo                 "20"        "70"          "100"        
+Media                  "11.25"     "57.5"        "80"         
+Desviacion Tipica      "5.45"      "9.01"        "14.58"      
+Mirador                "5"         "45"          "60"         
+Bernier                "10"        "55"          "75"         
+Río Grande             "10"        "60"          "85"         
+Tenis Betis            "20"        "70"          "100"        
+
+$Acciones
+            Rango     Phi Phi.mas Phi.menos
+Mirador         1  0.4661  0.7062    0.2401
+Río Grande      2  0.0715  0.4518    0.3803
+Bernier         3  0.0100  0.3926    0.3826
+Tenis Betis     4 -0.5475  0.1981    0.7457</code></pre>
+</div>
+</div>
+<p>Veamos los resultados:</p>
+<p>Aunque los flujos netos sean un poco distintos, se sigue manteniendo el mismo orden de preferencias de las alternativas. En primer lugar el club Mirador, con un flujo neto de 0.466, seguido de Río Grande (0.0715), Bernier (0.0100) y, por último, Tenis Betis (-0.5475). Siendo esta última, la única con flujo neto negativo otra vez. Además, vuelven a ser todas comparables y se puede volver a ver un orden de alternativas claro.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="método-axiomático-de-arrow-y-raymond" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="método-axiomático-de-arrow-y-raymond"><span class="header-section-number">2.6</span> Método Axiomático de Arrow y Raymond</h2>
+<p>Por último, vamos a usar el método de Arrow y Raymond. Para este método, volvemos a usar la misma matriz de decisión:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>arrow <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(matrizDec)</span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>arrow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$pasos
+$pasos[[1]]
+$pasos[[1]]$Mclasificacion
+            Mirador Bernier Río Grande Tenis Betis
+Mirador          NA     4.0        4.0           5
+Bernier           3      NA        3.5           5
+Río Grande        3     3.5         NA           6
+Tenis Betis       2     2.0        1.0          NA
+
+$pasos[[1]]$max.filas
+    Mirador     Bernier  Río Grande Tenis Betis 
+          5           5           6           2 
+
+$pasos[[1]]$indices.ordenados
+[1] 4 1 2 3
+
+$pasos[[1]]$alternativa.sale
+[1] "Tenis Betis"
+
+
+$pasos[[2]]
+$pasos[[2]]$Mclasificacion
+           Mirador Bernier Río Grande
+Mirador         NA     4.0        4.0
+Bernier          3      NA        3.5
+Río Grande       3     3.5         NA
+
+$pasos[[2]]$max.filas
+   Mirador    Bernier Río Grande 
+       4.0        3.5        3.5 
+
+$pasos[[2]]$indices.ordenados
+[1] 2 3 1
+
+$pasos[[2]]$alternativa.sale
+[1] "Bernier"
+
+
+$pasos[[3]]
+$pasos[[3]]$Mclasificacion
+           Mirador Río Grande
+Mirador         NA          4
+Río Grande       3         NA
+
+$pasos[[3]]$max.filas
+   Mirador Río Grande 
+         4          3 
+
+$pasos[[3]]$indices.ordenados
+[1] 2 1
+
+$pasos[[3]]$alternativa.sale
+[1] "Río Grande"
+
+
+
+$alternativasordenadas
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"</code></pre>
+</div>
+</div>
+<p>CONCLUSIONES</p>
+<p>Según el método de Arrow y Raymond, la mejor alternativa es el club Mirador, seguido del club Río Grande, Bernier y Tenis Betis.</p>
+<p>Además, podemos hacer el análisis de sensibilidad:</p>
+<div style="page-break-after: always;"></div>
+<section id="análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond"><span class="header-section-number">2.6.1</span> Análisis paramétrico o de sensibilidad aplicación Método axiomático de Arrow y Raymond</h3>
+<p>Vamos a ver cómo cambian los resultados finales si voy modificando las valoraciones de la primera alternativa en todos los criterios (haremos un bucle).</p>
+<p>Comenzamos inicialmente con la matriz de decisión usada durante todo el estudio.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>intalpha <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">0.1</span>)</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>sols <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">"list"</span>,<span class="fu">length</span>(intalpha))</span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
+<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a>  pej7_i <span class="ot">=</span> matrizDec   <span class="co">#vuelvo a copiar la matriz original</span></span>
+<span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a>  pej7_i[<span class="dv">1</span>,] <span class="ot">=</span> pej7_i[<span class="dv">1</span>,] <span class="sc">*</span> intalpha[i]    <span class="co">#modifico la fila 1</span></span>
+<span id="cb113-6"><a href="#cb113-6" aria-hidden="true" tabindex="-1"></a>  sej7_i <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(pej7_i)  </span>
+<span id="cb113-7"><a href="#cb113-7" aria-hidden="true" tabindex="-1"></a>  sols[[i]] <span class="ot">=</span> sej7_i<span class="sc">$</span>alternativasordenadas    <span class="co">#veo el resultado de cada matriz</span></span>
+<span id="cb113-8"><a href="#cb113-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb113-9"><a href="#cb113-9" aria-hidden="true" tabindex="-1"></a>sols</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[2]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[3]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[4]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[5]]
+[1] "Río Grande"  "Mirador"     "Bernier"     "Tenis Betis"
+
+[[6]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[7]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[8]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[9]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[10]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[11]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co">#veamos las posiciones de a1 en este bucle:</span></span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>posiciones_a1 <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(intalpha))</span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
+<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#i = 1</span></span>
+<span id="cb115-5"><a href="#cb115-5" aria-hidden="true" tabindex="-1"></a>  posiciones_a1[i] <span class="ot">=</span> <span class="fu">which</span>(sols[[i]]<span class="sc">==</span><span class="st">"Mirador"</span>)</span>
+<span id="cb115-6"><a href="#cb115-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb115-7"><a href="#cb115-7" aria-hidden="true" tabindex="-1"></a>posiciones_a1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 1 2 1 1 1 1 1 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ha ido mejorando las posiciones: de 5 a 3</span></span>
+<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb117-3"><a href="#cb117-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb117-4"><a href="#cb117-4" aria-hidden="true" tabindex="-1"></a><span class="co">#lo representamos con un plot:</span></span>
+<span id="cb117-5"><a href="#cb117-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(intalpha,posiciones_a1,<span class="at">type=</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Trabajo2_Reverte_Pagola_Angela_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>CONCLUSIONES:</p>
+<p>Vemos que para todos los valores por los que se multiplica la fila 1 (alternativa Mirador), la alternativa Mirador es la mejor, seguida de: Río Grande, Bernier y Tenis Betis. Sin embargo, hay una excepción, cuando la multiplico por 1,4. En esa iteración, club Mirador y club Río Grande cambian los papeles. Es algo curioso.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+</section>
+<section id="conclusión." class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> CONCLUSIÓN.</h1>
+<p>Vemos que en todos los métodos, la alternativa club Mirador es la mejor opción. Tiene sentido pues, con los pesos que se han obtenido con la tabla AHP, la ubicación y accesibilidad es el criterio con más peso, seguido de entrenamientos y familiaridad.</p>
+<p>El club Mirador es el mejor ubicado con respecto a mi casa y tiene un gran ambiente al ser un club pequeño y familiar.</p>
+<p>En segundo lugar, siempre aparece el club Río Grande, con excepción del método AHP (tercera posición), pero igualado prácticamente con el club Bernier. Por último, el club Tenis Betis siempre es el peor valorado. Tiene sentido, su principal característica son los entrenamientos, pero en todo lo demás siempre toma peores valores que las otras alternativas.</p>
+<p>Por lo tanto, tomaría la decisión de apuntarme al club Mirador.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="bibliografía." class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> BIBLIOGRAFÍA.</h1>
+<p>Toda la información ha sido extraída de estas páginas webs y de mi experiencia personal (decisión personal que tuve que tomar).</p>
+<ul>
+<li>https://clubelmirador.com/inicio</li>
+<li>https://escueladetenisfermingomez.es/</li>
+<li>https://clubbernier.com/</li>
+<li>https://riogrande.es/</li>
+<li>https://www.tenisbetis.com/index.php?id=10</li>
+</ul>
 </section>
 
 </main>

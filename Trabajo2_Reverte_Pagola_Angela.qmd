@@ -6,11 +6,11 @@ format:
   html:
     toc: true      
     toc-depth: 3     
-    number-sections: true  
+    number-sections: true 
 editor: visual
 ---
 
-# PRESENTACION DEL PROBLEMA.
+# PRESENTACIÓN DEL PROBLEMA.
 
 Mi pasión siempre han sido los deportes. He practicado muchos como: natación, baloncesto, tenis o fútbol sala. Este año, quiero volver a jugar al tenis y me encuentro emocionada. El problema es que tengo muchas opciones de clubes de tenis donde apuntarme y no sé qué hacer.
 
@@ -22,14 +22,15 @@ En cuanto a lo económico, para mí no es tan importante. Los precios son todos 
 
 Veamos ahora las diferentes alternativas y una breve presentación de ellas:
 
--   Club Mirador: Club muy cercano a mi casa (5 mins andando). Es un club social y pequeño, pero muy familiar. Cuenta con una escuela de tenis que lleva este deporte también en otros clubes. Todos los monitores son profesionales y muy cercanos. El problema es que cuenta solo con una pista de tenis, por lo que, por un lado, las clases de tenis tienen un alto número de alumnos y, por otro, es dicícil reservarla, pues siempre está ocupada. Esta escuela de tenis se preocupa mucho por hacer eventos y torneos. Siempre con el objetivo de pasarlo bien. Es perfecta para tener el tenis como ocio. Es bastante económica.
+-   Club Mirador: Club muy cercano a mi casa (5 mins andando). Es un club social y pequeño, pero muy familiar. Cuenta con una escuela de tenis que lleva este deporte también en otros clubes. Todos los monitores son profesionales y muy cercanos. El problema es que cuenta solo con una pista de tenis, por lo que, por un lado, las clases de tenis tienen un alto número de alumnos y, por otro, es difícil reservarla, pues siempre está ocupada. Esta escuela de tenis se preocupa mucho por hacer eventos y torneos. Siempre con el objetivo de pasarlo bien. Es perfecta para tener el tenis como ocio. Es bastante económica.
 
 -   Club Bernier: aunque también es un club social, su objetivo principal es el tenis. Bastante profesional, pero sin perder de vista el ocio y el disfrute. Está también muy cerca de casa (10 mins andando). Cuenta con 4 pistas de tenis, gimnasio, pistas de padel y bar/restaurante. También realizan muchos partidos y torneos en los que te puedes poner a prueba como tenista. No es tan económico.
 
--   Club de tenis Río Grande: club dedicado al tenis. Este club se dedica al tenis, aunque cuenta también con otros muchos servicios como piscina, sala fitness, pistas de padel o campos de fútbol. Es un club muy grande, con 16 pistas de tenis, de las cuales 12 son de tierra batida y en muy buen estado. Hay grupos de entrenamientos en función de tus objetivos: ocio, entrenamiento intenso, mejorar la técnica... Se encuentra a 5 mins en coche de mi casa y tiene parking. Hay buen ambiente, pero al ser tran grande, se pierde un poco la familiaridad. Es más caro.
+-   Club de tenis Río Grande: club dedicado al tenis. Este club se dedica al tenis, aunque cuenta también con otros muchos servicios como piscina, sala fitness, pistas de padel o campos de fútbol. Es un club muy grande, con 16 pistas de tenis, de las cuales 12 son de tierra batida y en muy buen estado. Hay grupos de entrenamientos en función de tus objetivos: ocio, entrenamiento intenso, mejorar la técnica... Se encuentra a 5 mins en coche de mi casa y tiene parking. Hay buen ambiente, pero al ser tan grande, se pierde un poco la familiaridad. Es más caro.
 
 -   Real Club de Tenis Betis: club histórico de tenis en Sevilla. Reconocido a nivel nacional. Ideal si quieres mejorar y entrenar de forma intensa. Realiza grandes torneos y está hermanado con otros clubes de tenis de España. Cuenta con 6 pistas de tenis de tierra batida, gimansio, pistas de padel y piscina. Se sitúa en Sevilla, por lo que está a 15 minutos en coche, más el tiempo de aparcamiento. Es caro.
 
+\pagebreak
 
 
 # SOLUCIÓN PROBLEMA.
@@ -47,6 +48,8 @@ En primer lugar, vamos a presentar los criterios y subcriterios tenidos en cuent
 -   Entrenamientos: aunque mi principal objetivo sea divertirme mientras hago deporte, para mí es esencial que los entrenamientos sean intensos y competitivos.
 
 Una vez presentados el problema, los criterios y las alternativas, procedemos a aplicar las diferentes técnicas de decisión multicriterio.
+
+\pagebreak
 
 ## Resolución con AHP con R.
 
@@ -182,7 +185,7 @@ round(pond.globales.parciales*100,2)
 
 CONCLUSIONES: Viendo los resultados, elegiríamos el club Mirador, con un 34,54%, seguido del club Bernier con un 22.73%. Las interpretaciones de por qué han salido estos resultados, la vamos a ver mejor con la librería AHP como he comentado anteriormente.
 
-Veámos ahora la inconsistencia de cada una de las tablas:
+Veamos ahora la inconsistencia de cada una de las tablas:
 
 ```{r}
 Inconsistencia1 = multicriterio.metodoAHP.coef.inconsistencia(tab1)
@@ -218,9 +221,11 @@ c(Inconsistencia10$mensaje, round(Inconsistencia10$RI.coef.inconsistencia,4) )
 
 Podemos comprobar que todas las matrices tienen consistencia aceptable. Por lo que las valoraciones que hemos puesto tienen sentido. No hay errores de inconsistencia y en las tablas no se forman ciclos entre preferencias de las alternativas y criterios.
 
+\pagebreak
+
 ## Resolución con AHP con librería AHP.
 
-Ahora vamos a hacer lo mismo, pero con la ayuda de la libreria AHP. Para ello, he plasmado toda la información en el fichero esquema.ahp. Deben salir las mismas conclusiones, pero vamos a comentarlas en esta sección, pues la salida es mucho más visual e intuitiva.
+Ahora vamos a hacer lo mismo, pero con la ayuda de la librería AHP. Para ello, he plasmado toda la información en el fichero esquema.ahp. Deben salir las mismas conclusiones, pero vamos a comentarlas en esta sección, pues la salida es mucho más visual e intuitiva.
 
 ```{r}
 library(ahp)
@@ -236,14 +241,14 @@ Visualize(datos)
 #pesos globales:
 t1 = AnalyzeTable(datos)
 export_formattable(AnalyzeTable(datos), file = "tablaahpGlobal.png")
-#MEJOR DECISIÓN: ALTERNATIVA B (peso global del 53.1%)
+
 
 #pesos locales:
 t2 = AnalyzeTable(datos, variable = "priority")
 export_formattable(t2, file = "tablaahpLocal.png")
 
-formattable::as.htmlwidget(t1)
-formattable::as.htmlwidget(t2)
+#formattable::as.htmlwidget(t1)
+#formattable::as.htmlwidget(t2)
 ```
 
 CONCLUSIONES:
@@ -263,6 +268,8 @@ Viendo las tablas podemos sacar muchas conclusiones, por ejemplo:
 -   La diferencia de pesos en los criterios hace realmente que nos decantemos por una u otra alternativa.
 
 -   Se puede comprobar que todas las comparaciones tienen una inconsistencia de menos de un 10%, por lo que hemos valorado con buen criterio y sin muchas inconsistencias.
+
+\pagebreak
 
 ## Resolución con Electre.
 
@@ -359,6 +366,8 @@ CONCLUSIÓN:
 
 Según el procedimiento de Electre también llegamos a la misma conclusión: quedarnos con la alternativa del club Mirador. Con los datos que le he proporcionado, ha sido complicada la elección entre las alternativas de club Mirador y de club Río Grande. Sin embargo, cambiando un poco las restricciones de los test de concordancia y discordancia en función de nuestro criterio y lógica, hemos podido concluir y tomar una decisión.
 
+\pagebreak
+
 ### Electre completo con tablas.
 Por otro lado, si queremos ver los pasos intermedios y las tablas de concordancia y discordancia, lo detallo a continuación. (Detallo solo con las restricciones finales)
 
@@ -366,7 +375,7 @@ Por otro lado, si queremos ver los pasos intermedios y las tablas de concordanci
 #Electre con todos los pasos:
 completo = func_ELECTRE_Completo(solElec3)
 
-#aqui las tablas de los índices:
+#aquí las tablas de los índices:
 completo$MIndices$KE
 
 #tabla del test de concordancia:
@@ -375,14 +384,17 @@ completo$TConcordancia$KE
 #tabla de discordancia:
 completo$TDiscordancia$KE
 
-#tabla de superacion de los dos test:
+#tabla de superación de los dos test:
 completo$TSuperacion$KE
 ```
 
 Con estas tablas podemos comprobar que el par (a1,a3) supera ambos tests (el de concordancia y el de discordancia), pero que el par (a3,a1) no supera el test de concordancia. Por ello, la alternativa 1 (club Mirador) supera a la alternativa 3 (club Río Grande)
 
+\pagebreak
 
 ## Resolución con Promethee con R.
+
+### Promethee I
 
 A continuación voy a resolver el problema con la técnica de Promethee. Para ello, voy usar la misma matriz de decisión, los mismos pesos (para poder comparar y porque realmente muestran mis preferencias).
 Para las funciones de preferencia, voy a tomar una distinta en cada criterio.
@@ -392,8 +404,8 @@ Para las funciones de preferencia, voy a tomar una distinta en cada criterio.
 - Nº Pistas: criterio con preferencia lineal y área de indiferencia (q=2,p=8)
 - Instalaciones: criterio nivel (q=5,p=30)
 - Ubicación: criterio usual (p=8)
-- Precio:
-- Entrenamientos:
+- Precio: preferencia lineal (q=3,p=12)
+- Entrenamientos: cuasi criterio (q=1)
 
 Las funciones de preferencias quedarían así:
 ```{r}
@@ -403,6 +415,136 @@ tab.fpref = matrix( c(3,    5,  30,  0,
                       5,    2,   8,  0,
                       4,    5,  30,  0,
                       1,    0,   8,  0,
-                      6,    0,   1,  5),ncol=4,byrow=TRUE)
+                      3,    3,  12,  0,
+                      2,    1,   0,  0),ncol=4,byrow=TRUE)
 ```
+
+Aplico Promethee I en primer lugar:
+
+```{r}
+tab.Pthee.i = multicriterio.metodo.promethee_i(matrizDec,crisub,tab.fpref)
+tab.Pthee.i
+require(qgraph)
+qgraph(tab.Pthee.i$tablarelacionsupera)
+```
+Según los resultados del Promethee I, Mirador aparece como la alternativa con mayor capacidad de dominancia (mayor flujo entrante), seguida de Río Grande y Bernier, mientras que Tenis Betis resulta la menos preferida al presentar el menor flujo de entrada. En cuanto al flujo saliente (cuánto las alternativas son dominadas por las demás), la menor es club Mirador, seguido de Río Grande, Bernier y, por último, Tenis Betis. La matriz de relación de superación confirma que el club Mirador domina al resto de clubes, evidenciando una clara ventaja respecto a los criterios considerados.
+
+Casualmente ninguna es incomparable ni indiferente, pues los flujos entrantes y salientes están ordenados de la misma manera. Es decir, no existe ninguna alternativa que tenga mejor flujo entrante que otra, pero peor flujo saliente. Por lo que las conclusiones son mucho mejores. Las alernativas con Promethee I quedan ya perfectamente ordenadas.
+
+\pagebreak
+
+### Promethee II
+
+Para terminar de confirmar nuestras hipótesis, vamos a realizar Promethee II y obtener el ranking final según los flujos netos:
+
+```{r}
+tab.Pthee.ii = multicriterio.metodo.promethee_ii(matrizDec,crisub,tab.fpref)
+
+require(qgraph)
+qgraph(tab.Pthee.ii$tablarelacionsupera)
+
+#ordenacion final promethee 2:
+tab.Pthee.ii$vflujos.netos
+order(tab.Pthee.ii$vflujos.netos,decreasing=TRUE)
+```
+
+CONCLUSIONES PROMETHEE:
+
+Como habíamos visto antes, la mejor alternativa según Promethee es el club Mirador, seguida por Río Grande, Bernier y, por último, Tenis Betis.
+
+Además, se puede comprobar la gran diferencia entre los distintos flujos netos, por lo que Promethee realiza una buena diferencia entre las distintas alternativas. También, cabe destacar que la única alternativa con flujo neto negativo es Tenis Betis, por lo que se puede decir que, en general, esta alternativa es más dominada de lo que ella domina.
+
+\pagebreak
+
+## Promethee Windows.
+
+Veamos en primer lugar el planteamiento del problema con Windows. Voy a usar la opción de poner los valores de los criterios de minimizar en positivo, pero especificando si quiero minimizar o maximizar los criterios.
+
+```{r}
+(res = multicriterio.metodo.promethee_windows(matrizDec,tab.fpref,crisub,
+                                              fminmax = c("max","max","max","max","min","min","max") ))
+```
+
+Veamos los resultados:
+
+Aunque los flujos netos sean un poco distintos, se sigue manteniendo el mismo orden de preferencias de las alternativas. En primer lugar el club Mirador, con un flujo neto de 0.466, seguido de Río Grande (0.0715), Bernier (0.0100) y, por último, Tenis Betis (-0.5475). Siendo esta última, la única con flujo neto negativo otra vez. Además, vuelven a ser todas comparables y se puede volver a ver un orden de alternativas claro.
+
+\pagebreak
+
+## Método Axiomático de Arrow y Raymond
+
+Por último, vamos a usar el método de Arrow y Raymond. Para este método, volvemos a usar la misma matriz de decisión:
+
+```{r}
+arrow = multicriterio.metodoaxiomatico.ArrowRaymond(matrizDec)
+arrow
+```
+CONCLUSIONES
+
+Según el método de Arrow y Raymond, la mejor alternativa es el club Mirador, seguido del club Río Grande, Bernier y Tenis Betis.
+
+Además, podemos hacer el análisis de sensibilidad:
+
+\pagebreak
+
+### Análisis paramétrico o de sensibilidad aplicación Método axiomático de Arrow y Raymond
+
+Vamos a ver cómo cambian los resultados finales si voy modificando las valoraciones de la primera alternativa en todos los criterios (haremos un bucle).
+
+Comenzamos inicialmente con la matriz de decisión usada durante todo el estudio.
+
+```{r}
+intalpha = seq(1,2,0.1)
+sols = vector("list",length(intalpha))
+for (i in 1:length(intalpha)) {
+  pej7_i = matrizDec   #vuelvo a copiar la matriz original
+  pej7_i[1,] = pej7_i[1,] * intalpha[i]    #modifico la fila 1
+  sej7_i = multicriterio.metodoaxiomatico.ArrowRaymond(pej7_i)  
+  sols[[i]] = sej7_i$alternativasordenadas    #veo el resultado de cada matriz
+}
+sols
+
+```
+```{r}
+#veamos las posiciones de a1 en este bucle:
+posiciones_a1 = rep(NA,length(intalpha))
+for (i in 1:length(intalpha)) {
+  #i = 1
+  posiciones_a1[i] = which(sols[[i]]=="Mirador")
+}
+posiciones_a1
+#ha ido mejorando las posiciones: de 5 a 3
+
+
+#lo representamos con un plot:
+plot(intalpha,posiciones_a1,type= "l")
+```
+CONCLUSIONES:
+
+Vemos que para todos los valores por los que se multiplica la fila 1 (alternativa Mirador), la alternativa Mirador es la mejor, seguida de: Río Grande, Bernier y Tenis Betis. Sin embargo, hay una excepción, cuando la multiplico por 1,4. En esa iteración, club Mirador y club Río Grande cambian los papeles. Es algo curioso.
+
+
+\pagebreak
+
+# CONCLUSIÓN.
+
+Vemos que en todos los métodos, la alternativa club Mirador es la mejor opción. Tiene sentido pues, con los pesos que se han obtenido con la tabla AHP, la ubicación y accesibilidad es el criterio con más peso, seguido de entrenamientos y familiaridad. 
+
+El club Mirador es el mejor ubicado con respecto a mi casa y tiene un gran ambiente al ser un club pequeño y familiar. 
+
+En segundo lugar, siempre aparece el club Río Grande, con excepción del método AHP (tercera posición), pero igualado prácticamente con el club Bernier. Por último, el club Tenis Betis siempre es el peor valorado. Tiene sentido, su principal característica son los entrenamientos, pero en todo lo demás siempre toma peores valores que las otras alternativas.
+
+Por lo tanto, tomaría la decisión de apuntarme al club Mirador.
+
+\pagebreak
+
+# BIBLIOGRAFÍA.
+
+Toda la información ha sido extraída de estas páginas webs y de mi experiencia personal (decisión personal que tuve que tomar). 
+
+- https://clubelmirador.com/inicio
+- https://escueladetenisfermingomez.es/
+- https://clubbernier.com/
+- https://riogrande.es/
+- https://www.tenisbetis.com/index.php?id=10
 
