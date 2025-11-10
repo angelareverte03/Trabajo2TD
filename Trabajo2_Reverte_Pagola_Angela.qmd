@@ -391,7 +391,7 @@ Para las funciones de preferencia, voy a tomar una distinta en cada criterio.
 - Eventos deportivos: cuasi criterio (q=0.5)
 - Nº Pistas: criterio con preferencia lineal y área de indiferencia (q=2,p=8)
 - Instalaciones: criterio nivel (q=5,p=30)
-- Ubicación:
+- Ubicación: criterio usual (p=8)
 - Precio:
 - Entrenamientos:
 
@@ -402,7 +402,7 @@ tab.fpref = matrix( c(3,    5,  30,  0,
                       2,  0.5,   0,  0,
                       5,    2,   8,  0,
                       4,    5,  30,  0,
-                      1,    0,   1,  0,
+                      1,    0,   8,  0,
                       6,    0,   1,  5),ncol=4,byrow=TRUE)
 ```
 
