@@ -1,0 +1,1681 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Trabajo 2},
+  pdfauthor={Ángela Reverte Pagola},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Trabajo 2}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Elección club deportivo para practicar tenis}
+\author{Ángela Reverte Pagola}
+\date{}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+\section{PRESENTACIÓN DEL
+PROBLEMA.}\label{presentaciuxf3n-del-problema.}
+
+Mi pasión siempre han sido los deportes. He practicado muchos como:
+natación, baloncesto, tenis o fútbol sala. Este año, quiero volver a
+jugar al tenis y me encuentro emocionada. El problema es que tengo
+muchas opciones de clubes de tenis donde apuntarme y no sé qué hacer.
+
+Para mí, el deporte es algo esencial en mi vida y, aunque no me quiero
+dedicar de forma profesional, me gusta mucho que los entrenamientos sean
+muy intensos y lo más profesionales posibles. Sin embargo, creo que el
+ambiente debe ser divertido y relajado. Tan importante es hacer deporte
+serio como disfrutarlo y pasarlo bien.
+
+Por otro lado, durante el día estoy muy ajetreada, por lo que es
+importante no perder tiempo en el desplazamiento. Lo ideal sería que el
+club estuviera cerca de casa o, por lo menos, que tuviera fácil
+aparcamiento.
+
+En cuanto a lo económico, para mí no es tan importante. Los precios son
+todos parecidos, aunque sí es verdad que algunos incluyen más servicios
+que otros. De hecho, es importante destacar que no todos los clubes
+tienen las mismas instalaciones. A mi me encanta alquilar pistas con mi
+hermano y amigos para jugar. Y no todos los clubes tienen las mismas
+facilidades.
+
+Veamos ahora las diferentes alternativas y una breve presentación de
+ellas:
+
+\begin{itemize}
+\item
+  Club Mirador: Club muy cercano a mi casa (5 mins andando). Es un club
+  social y pequeño, pero muy familiar. Cuenta con una escuela de tenis
+  que lleva este deporte también en otros clubes. Todos los monitores
+  son profesionales y muy cercanos. El problema es que cuenta solo con
+  una pista de tenis, por lo que, por un lado, las clases de tenis
+  tienen un alto número de alumnos y, por otro, es difícil reservarla,
+  pues siempre está ocupada. Esta escuela de tenis se preocupa mucho por
+  hacer eventos y torneos. Siempre con el objetivo de pasarlo bien. Es
+  perfecta para tener el tenis como ocio. Es bastante económica.
+\item
+  Club Bernier: aunque también es un club social, su objetivo principal
+  es el tenis. Bastante profesional, pero sin perder de vista el ocio y
+  el disfrute. Está también muy cerca de casa (10 mins andando). Cuenta
+  con 4 pistas de tenis, gimnasio, pistas de padel y bar/restaurante.
+  También realizan muchos partidos y torneos en los que te puedes poner
+  a prueba como tenista. No es tan económico.
+\item
+  Club de tenis Río Grande: club dedicado al tenis. Este club se dedica
+  al tenis, aunque cuenta también con otros muchos servicios como
+  piscina, sala fitness, pistas de padel o campos de fútbol. Es un club
+  muy grande, con 16 pistas de tenis, de las cuales 12 son de tierra
+  batida y en muy buen estado. Hay grupos de entrenamientos en función
+  de tus objetivos: ocio, entrenamiento intenso, mejorar la
+  técnica\ldots{} Se encuentra a 5 mins en coche de mi casa y tiene
+  parking. Hay buen ambiente, pero al ser tan grande, se pierde un poco
+  la familiaridad. Es más caro.
+\item
+  Real Club de Tenis Betis: club histórico de tenis en Sevilla.
+  Reconocido a nivel nacional. Ideal si quieres mejorar y entrenar de
+  forma intensa. Realiza grandes torneos y está hermanado con otros
+  clubes de tenis de España. Cuenta con 6 pistas de tenis de tierra
+  batida, gimansio, pistas de padel y piscina. Se sitúa en Sevilla, por
+  lo que está a 15 minutos en coche, más el tiempo de aparcamiento. Es
+  caro.
+\end{itemize}
+
+\pagebreak
+
+\section{SOLUCIÓN PROBLEMA.}\label{soluciuxf3n-problema.}
+
+En primer lugar, vamos a presentar los criterios y subcriterios tenidos
+en cuenta:
+
+\begin{itemize}
+\item
+  Ambiente: la buena relación entre alumnos y monitores es esencial.
+  Este criterio, los vamos a dividir en dos subcriterios: familiaridad y
+  eventos deportivos. Familiaridad: se agradece el buen rollo y las
+  ganas de disfrutar el deporte. Tanto entre los alumnos como con los
+  monitores. Eventos deportivos: súper importante para crear vínculos
+  con otros jugadores y para crear un ambiente deportivo y de
+  competición.
+\item
+  Servicios: este criterio también lo vamos a dividir en dos
+  subcriterios: pistas de tenis e instalaciones. En primer lugar, pistas
+  de tenis: lo ideal es que haya varias pistas de tenis, para poder
+  alquilarlas y que estén en buen estado. Instalaciones: siempre es
+  mejor que el club posea otras istalaciones como gimnasio, pistas de
+  padel o bar, para que se convierta en un club donde disfrutar, además
+  de hacer deporte.
+\item
+  Ubicación y accesibilidad: debido a la falta de tiempo, lo ideal es
+  que el club esté cerca de casa o, por lo menos, que sea fácil de
+  aparcar con el coche.
+\item
+  Precio: debido a que no quiero dedicarme profesionalmente, los precios
+  deben ser asequibles.
+\item
+  Entrenamientos: aunque mi principal objetivo sea divertirme mientras
+  hago deporte, para mí es esencial que los entrenamientos sean intensos
+  y competitivos.
+\end{itemize}
+
+Una vez presentados el problema, los criterios y las alternativas,
+procedemos a aplicar las diferentes técnicas de decisión multicriterio.
+
+\pagebreak
+
+\subsection{Resolución con AHP con
+R.}\label{resoluciuxf3n-con-ahp-con-r.}
+
+Con toda la información anterior, voy a contruir las tablas de
+comparación 2 a 2. Y calculamos los pesos locales:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{source}\NormalTok{(}\StringTok{"teoriadecision\_funciones\_multicriterio.R"}\NormalTok{)}
+\FunctionTok{source}\NormalTok{(}\StringTok{"teoriadecision\_funciones\_multicriterio\_diagram.R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Cargando paquete requerido: shape
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{source}\NormalTok{(}\StringTok{"teoriadecision\_funciones\_multicriterio\_utiles.R"}\NormalTok{)}
+\NormalTok{n.criterios }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Ambiente"}\NormalTok{,}\StringTok{"Servicios"}\NormalTok{,}\StringTok{"Ubicación y accesibilidad"}\NormalTok{,}\StringTok{"Precio"}\NormalTok{,}\StringTok{"Entrenamientos"}\NormalTok{)}
+\NormalTok{tab1 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{4}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{7}\NormalTok{),}\DecValTok{5}\NormalTok{,n.criterios)}
+\NormalTok{tab1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                           Ambiente Servicios Ubicación y accesibilidad Precio
+Ambiente                  1.0000000 2.0000000                 0.3333333      5
+Servicios                 0.5000000 1.0000000                 0.2500000      3
+Ubicación y accesibilidad 3.0000000 4.0000000                 1.0000000      6
+Precio                    0.2000000 0.3333333                 0.1666667      1
+Entrenamientos            0.3333333 2.0000000                 0.5000000      7
+                          Entrenamientos
+Ambiente                       3.0000000
+Servicios                      0.5000000
+Ubicación y accesibilidad      2.0000000
+Precio                         0.1428571
+Entrenamientos                 1.0000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl1 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab1)}
+\NormalTok{(}\AttributeTok{pl1r =} \FunctionTok{round}\NormalTok{(pl1}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                 Ambiente                 Servicios Ubicación y accesibilidad 
+                   0.2554                    0.1037                    0.4157 
+                   Precio            Entrenamientos 
+                   0.0419                    0.1833 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Ambiente:}
+\NormalTok{n.criterios2 }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Familiaridad"}\NormalTok{,}\StringTok{"Eventos deportivos"}\NormalTok{)}
+\NormalTok{tab2 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{),}\DecValTok{2}\NormalTok{,n.criterios2)}
+\NormalTok{tab2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                   Familiaridad Eventos deportivos
+Familiaridad                1.0                  2
+Eventos deportivos          0.5                  1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl2 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab2)}
+\NormalTok{(}\AttributeTok{pl2r =} \FunctionTok{round}\NormalTok{(pl2}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Familiaridad Eventos deportivos 
+            0.6667             0.3333 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Servicios}
+\NormalTok{n.criterios3 }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Pistas de tenis"}\NormalTok{,}\StringTok{"Instalaciones"}\NormalTok{)}
+\NormalTok{tab3 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{),}\DecValTok{2}\NormalTok{,n.criterios3)}
+\NormalTok{tab3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+                Pistas de tenis Instalaciones
+Pistas de tenis       1.0000000             6
+Instalaciones         0.1666667             1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl3 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab3)}
+\NormalTok{(}\AttributeTok{pl3r =} \FunctionTok{round}\NormalTok{(pl3}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Pistas de tenis   Instalaciones 
+         0.8571          0.1429 
+\end{verbatim}
+
+De esta forma, ya tenemos todos los pesos locales de todos los criterios
+y subcriterios:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{C11 }\OtherTok{=} \FloatTok{0.2554} \SpecialCharTok{*} \FloatTok{0.6667}
+\NormalTok{C12 }\OtherTok{=} \FloatTok{0.2554} \SpecialCharTok{*} \FloatTok{0.3333} 
+\NormalTok{C21 }\OtherTok{=} \FloatTok{0.1037} \SpecialCharTok{*} \FloatTok{0.8571}
+\NormalTok{C22 }\OtherTok{=} \FloatTok{0.1037} \SpecialCharTok{*} \FloatTok{0.1429}
+\NormalTok{C3 }\OtherTok{=} \FloatTok{0.4157}
+\NormalTok{C4 }\OtherTok{=} \FloatTok{0.0419} 
+\NormalTok{C5 }\OtherTok{=} \FloatTok{0.1833}
+
+\NormalTok{crisub }\OtherTok{=} \FunctionTok{c}\NormalTok{(C11,C12,C21,C22,C3,C4,C5)}
+\NormalTok{crisub}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.17027518 0.08512482 0.08888127 0.01481873 0.41570000 0.04190000 0.18330000
+\end{verbatim}
+
+Del mismo modo, calculamos los pesos locales para las alternativas en
+función de cada criterio y subcriterio:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Familiaridad}
+\NormalTok{n.alternativas }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Mirador"}\NormalTok{,}\StringTok{"Bernier"}\NormalTok{,}\StringTok{"Río Grande"}\NormalTok{,}\StringTok{"Tenis Betis"}\NormalTok{)}
+\NormalTok{tab4 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{),}\DecValTok{4}\NormalTok{,n.alternativas)}
+\NormalTok{tab4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              Mirador Bernier Río Grande Tenis Betis
+Mirador     1.0000000    2.00        4.0           6
+Bernier     0.5000000    1.00        2.0           4
+Río Grande  0.2500000    0.50        1.0           2
+Tenis Betis 0.1666667    0.25        0.5           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl4 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab4)}
+\NormalTok{(}\AttributeTok{pl4r =} \FunctionTok{round}\NormalTok{(pl4}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+     0.5132      0.2751      0.1376      0.0741 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Eventos deportivos}
+\NormalTok{tab5 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{),}\DecValTok{4}\NormalTok{,n.alternativas)}
+\NormalTok{tab5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            Mirador   Bernier Río Grande Tenis Betis
+Mirador           1 0.3333333  0.2000000   0.1666667
+Bernier           3 1.0000000  0.3333333   0.2000000
+Río Grande        5 3.0000000  1.0000000   0.3333333
+Tenis Betis       6 5.0000000  3.0000000   1.0000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl5 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab5)}
+\NormalTok{(}\AttributeTok{pl5r =} \FunctionTok{round}\NormalTok{(pl5}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+     0.0589      0.1195      0.2661      0.5554 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Pistas de tenis}
+\NormalTok{tab6 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{9}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{7}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{,}\DecValTok{6}\NormalTok{),}\DecValTok{4}\NormalTok{,n.alternativas)}
+\NormalTok{tab6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            Mirador   Bernier Río Grande Tenis Betis
+Mirador           1 0.3333333  0.1111111   0.1666667
+Bernier           3 1.0000000  0.1428571   0.5000000
+Río Grande        9 7.0000000  1.0000000   6.0000000
+Tenis Betis       6 2.0000000  0.1666667   1.0000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl6 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab6)}
+\NormalTok{(}\AttributeTok{pl6r =} \FunctionTok{round}\NormalTok{(pl6}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+     0.0434      0.0993      0.6780      0.1794 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Instalaciones}
+\NormalTok{tab7 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{),}\DecValTok{4}\NormalTok{,n.alternativas)}
+\NormalTok{tab7}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            Mirador Bernier Río Grande Tenis Betis
+Mirador         1.0     0.5  0.2000000           2
+Bernier         2.0     1.0  0.3333333           2
+Río Grande      5.0     3.0  1.0000000           4
+Tenis Betis     0.5     0.5  0.2500000           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl7 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab7)}
+\NormalTok{(}\AttributeTok{pl7r =} \FunctionTok{round}\NormalTok{(pl7}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+     0.1349      0.2116      0.5529      0.1006 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Ubicación}
+\NormalTok{tab8 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{7}\NormalTok{),}\DecValTok{4}\NormalTok{,n.alternativas)}
+\NormalTok{tab8}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              Mirador   Bernier Río Grande Tenis Betis
+Mirador     1.0000000 2.0000000  5.0000000           9
+Bernier     0.5000000 1.0000000  3.0000000           8
+Río Grande  0.2000000 0.3333333  1.0000000           7
+Tenis Betis 0.1111111 0.1250000  0.1428571           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl8 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab8)}
+\NormalTok{(}\AttributeTok{pl8r =} \FunctionTok{round}\NormalTok{(pl8}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+     0.5157      0.3050      0.1431      0.0362 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Precio}
+\NormalTok{tab9 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{),}\DecValTok{4}\NormalTok{,n.alternativas)}
+\NormalTok{tab9}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+              Mirador Bernier Río Grande Tenis Betis
+Mirador     1.0000000    3.00        5.0           6
+Bernier     0.3333333    1.00        2.0           4
+Río Grande  0.2000000    0.50        1.0           2
+Tenis Betis 0.1666667    0.25        0.5           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl9 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab9)}
+\NormalTok{(}\AttributeTok{pl9r =} \FunctionTok{round}\NormalTok{(pl9}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+     0.5715      0.2355      0.1224      0.0706 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Entrenamientos}
+\NormalTok{tab10 }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizvaloraciones\_mej}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{4}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{5}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{8}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{,}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{),}\DecValTok{4}\NormalTok{,n.alternativas)}
+\NormalTok{tab10}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            Mirador Bernier Río Grande Tenis Betis
+Mirador           1    0.25  0.2000000   0.1250000
+Bernier           4    1.00  0.3333333   0.1666667
+Río Grande        5    3.00  1.0000000   0.3333333
+Tenis Betis       8    6.00  3.0000000   1.0000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pl10 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.variante1.autovectormayorautovalor}\NormalTok{(tab10)}
+\NormalTok{(}\AttributeTok{pl10r =} \FunctionTok{round}\NormalTok{(pl10}\SpecialCharTok{$}\NormalTok{valoraciones.ahp,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+     0.0482      0.1182      0.2500      0.5836 
+\end{verbatim}
+
+Una vez calculados los pesos locales, pasamos a los pesos globales. Al
+ser un problema multinivel, los vamos a calcular a mano. Aunque podamos
+sacar todas las conclusiones con estos resultados, voy a terminar de
+explicarlas con la librería AHP, pues todas las tablas se aprecian mucho
+mejor y tenemos las mismas soluciones pero de forma más visual.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matper }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\FloatTok{0.5132}\NormalTok{,}\FloatTok{0.2751}\NormalTok{,}\FloatTok{0.1376}\NormalTok{,}\FloatTok{0.0741}\NormalTok{,}
+                  \FloatTok{0.0589}\NormalTok{,}\FloatTok{0.1195}\NormalTok{,}\FloatTok{0.2661}\NormalTok{,}\FloatTok{0.5554}\NormalTok{,}
+                  \FloatTok{0.0434}\NormalTok{,}\FloatTok{0.0993}\NormalTok{,}\FloatTok{0.6780}\NormalTok{,}\FloatTok{0.1794}\NormalTok{,}
+                  \FloatTok{0.1349}\NormalTok{,}\FloatTok{0.2116}\NormalTok{,}\FloatTok{0.5529}\NormalTok{,}\FloatTok{0.1006}\NormalTok{,}
+                  \FloatTok{0.5157}\NormalTok{,}\FloatTok{0.3050}\NormalTok{,}\FloatTok{0.1431}\NormalTok{,}\FloatTok{0.0362}\NormalTok{,}
+                  \FloatTok{0.5715}\NormalTok{,}\FloatTok{0.2355}\NormalTok{,}\FloatTok{0.1224}\NormalTok{,}\FloatTok{0.0706}\NormalTok{,}
+                  \FloatTok{0.0482}\NormalTok{,}\FloatTok{0.1182}\NormalTok{,}\FloatTok{0.2500}\NormalTok{,}\FloatTok{0.5836}\NormalTok{),}\AttributeTok{ncol=}\DecValTok{4}\NormalTok{,}\AttributeTok{nrow=}\DecValTok{7}\NormalTok{,}\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{pond.globales }\OtherTok{=}\NormalTok{ crisub }\SpecialCharTok{\%*\%}\NormalTok{ matper}
+\FunctionTok{colnames}\NormalTok{(pond.globales) }\OtherTok{=}\NormalTok{ n.alternativas}
+\NormalTok{pond.globales}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      Mirador   Bernier Río Grande Tenis Betis
+[1,] 0.345413 0.2272987  0.2249766   0.2023121
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pond.globales}\SpecialCharTok{*}\DecValTok{100}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     Mirador Bernier Río Grande Tenis Betis
+[1,]   34.54   22.73       22.5       20.23
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Mcrisub }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(crisub,}\AttributeTok{ncol=}\DecValTok{4}\NormalTok{,}\AttributeTok{nrow=}\DecValTok{7}\NormalTok{)}
+\NormalTok{Mcrisub}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+           [,1]       [,2]       [,3]       [,4]
+[1,] 0.17027518 0.17027518 0.17027518 0.17027518
+[2,] 0.08512482 0.08512482 0.08512482 0.08512482
+[3,] 0.08888127 0.08888127 0.08888127 0.08888127
+[4,] 0.01481873 0.01481873 0.01481873 0.01481873
+[5,] 0.41570000 0.41570000 0.41570000 0.41570000
+[6,] 0.04190000 0.04190000 0.04190000 0.04190000
+[7,] 0.18330000 0.18330000 0.18330000 0.18330000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pond.globales.parciales }\OtherTok{=}\NormalTok{ Mcrisub}\SpecialCharTok{*}\NormalTok{matper}
+\FunctionTok{round}\NormalTok{(pond.globales.parciales}\SpecialCharTok{*}\DecValTok{100}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      [,1]  [,2] [,3]  [,4]
+[1,]  8.74  4.68 2.34  1.26
+[2,]  0.50  1.02 2.27  4.73
+[3,]  0.39  0.88 6.03  1.59
+[4,]  0.20  0.31 0.82  0.15
+[5,] 21.44 12.68 5.95  1.50
+[6,]  2.39  0.99 0.51  0.30
+[7,]  0.88  2.17 4.58 10.70
+\end{verbatim}
+
+CONCLUSIONES: Viendo los resultados, elegiríamos el club Mirador, con un
+34,54\%, seguido del club Bernier con un 22.73\%. Las interpretaciones
+de por qué han salido estos resultados, la vamos a ver mejor con la
+librería AHP como he comentado anteriormente.
+
+Veamos ahora la inconsistencia de cada una de las tablas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia1 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab1)}
+\FunctionTok{c}\NormalTok{(Inconsistencia1}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia1}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0731"                
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia2 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab2)}
+\FunctionTok{c}\NormalTok{(Inconsistencia2}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia2}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "NaN"                   
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia3 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab3)}
+\FunctionTok{c}\NormalTok{(Inconsistencia3}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia3}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "NaN"                   
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia4 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab4)}
+\FunctionTok{c}\NormalTok{(Inconsistencia4}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia4}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0038"                
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia5 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab5)}
+\FunctionTok{c}\NormalTok{(Inconsistencia5}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia5}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0557"                
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia6 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab6)}
+\FunctionTok{c}\NormalTok{(Inconsistencia6}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia6}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0699"                
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia7 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab7)}
+\FunctionTok{c}\NormalTok{(Inconsistencia7}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia7}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0356"                
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia8 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab8)}
+\FunctionTok{c}\NormalTok{(Inconsistencia8}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia8}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0747"                
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia9 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab9)}
+\FunctionTok{c}\NormalTok{(Inconsistencia9}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia9}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0181"                
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inconsistencia10 }\OtherTok{=} \FunctionTok{multicriterio.metodoAHP.coef.inconsistencia}\NormalTok{(tab10)}
+\FunctionTok{c}\NormalTok{(Inconsistencia10}\SpecialCharTok{$}\NormalTok{mensaje, }\FunctionTok{round}\NormalTok{(Inconsistencia10}\SpecialCharTok{$}\NormalTok{RI.coef.inconsistencia,}\DecValTok{4}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "Consistencia aceptable" "0.0597"                
+\end{verbatim}
+
+Podemos comprobar que todas las matrices tienen consistencia aceptable.
+Por lo que las valoraciones que hemos puesto tienen sentido. No hay
+errores de inconsistencia y en las tablas no se forman ciclos entre
+preferencias de las alternativas y criterios.
+
+\pagebreak
+
+\subsection{Resolución con AHP con librería
+AHP.}\label{resoluciuxf3n-con-ahp-con-libreruxeda-ahp.}
+
+Ahora vamos a hacer lo mismo, pero con la ayuda de la librería AHP. Para
+ello, he plasmado toda la información en el fichero esquema.ahp. Deben
+salir las mismas conclusiones, pero vamos a comentarlas en esta sección,
+pues la salida es mucho más visual e intuitiva.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ahp)}
+\NormalTok{datos }\OtherTok{=} \FunctionTok{Load}\NormalTok{(}\StringTok{"esquema.ahp"}\NormalTok{)}
+\FunctionTok{Calculate}\NormalTok{(datos)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{Visualize}\NormalTok{(datos)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+file:///C:/Users/Usuario/AppData/Local/Temp/RtmpGQwA3z/file28a45f67178b/widget28a4467420a6.html screenshot completed
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-16-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#pesos globales:}
+\NormalTok{t1 }\OtherTok{=} \FunctionTok{AnalyzeTable}\NormalTok{(datos)}
+\FunctionTok{export\_formattable}\NormalTok{(}\FunctionTok{AnalyzeTable}\NormalTok{(datos), }\AttributeTok{file =} \StringTok{"tablaahpGlobal.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-17-1.png}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#pesos locales:}
+\NormalTok{t2 }\OtherTok{=} \FunctionTok{AnalyzeTable}\NormalTok{(datos, }\AttributeTok{variable =} \StringTok{"priority"}\NormalTok{)}
+\FunctionTok{export\_formattable}\NormalTok{(t2, }\AttributeTok{file =} \StringTok{"tablaahpLocal.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-17-2.png}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#formattable::as.htmlwidget(t1)}
+\CommentTok{\#formattable::as.htmlwidget(t2)}
+\end{Highlighting}
+\end{Shaded}
+
+CONCLUSIONES:
+
+Viendo las tablas podemos sacar muchas conclusiones, por ejemplo:
+
+\begin{itemize}
+\item
+  Elegimos la opción club Mirador, pues es el que tiene mejor
+  puntuación: 34.5\%.
+\item
+  Lo que más le puntúa para ser elegido es la ubicación y accesibilidad.
+  Se le ha dado mucha importancia a que el club de tenis esté cerca de
+  casa y, el club Mirador es el mejor en este aspecto. Además, al ser un
+  club pequeño, hay mucha familiaridad y un muy buen ambiente, por lo
+  que esto le suma mucho también. Teniendo en cuenta que son los dos
+  criterios con más peso, esta alternativa sale ganadora.
+\item
+  Del mismo modo se puede pensar con el club Bernier. Se caracteriza por
+  la ubicación y el ambiente. Aún así, al tener peores valoraciones que
+  el club Mirador, se queda en segunda posición.
+\item
+  Por otro lado, el club Río Grande. El mejor en cuanto a los servicios
+  debido al gran número de pistas de tenis que posee. Sin embargo, este
+  no es el criterio con más peso y en los demás no es el mejor. Por eso
+  termina en tercera posición.
+\item
+  Por último, el club Tenis Betis. La ubicación y accesibilidad es lo
+  que más le penaliza, pues tiene muy mala valoración y es el criterio
+  con más peso. Es el mejor en los entrenamientos, pues es un club
+  bastante serio, pero no es suficiente para ser elegido.
+\item
+  La diferencia de pesos en los criterios hace realmente que nos
+  decantemos por una u otra alternativa.
+\item
+  Se puede comprobar que todas las comparaciones tienen una
+  inconsistencia de menos de un 10\%, por lo que hemos valorado con buen
+  criterio y sin muchas inconsistencias.
+\end{itemize}
+
+\pagebreak
+
+\subsection{Resolución con Electre.}\label{resoluciuxf3n-con-electre.}
+
+En primer lugar creamos la matriz de decisión. Para ello, vamos a tratar
+los subcriterios como criterios y de esta forma veremos más fácil como
+aplicar este método. Vamos a darle estos valores a cada alternativa en
+cada criterio:
+
+\begin{itemize}
+\tightlist
+\item
+  Familiaridad: como es algo subjetivo, voy a poner un porcentaje en
+  función de mi propio criterio. Este criterio lo querremos maximizar.
+  Para obtener estos valores he mantenido las diferencias dadas en la
+  tabla AHP, pero esta vez de forma porcentual.
+\item
+  Eventos deportivos: una media de cuántos torneos por mes. Lo ideal es
+  tener el máximo número de torneos al mes.
+\item
+  Pistas de tenis: nº de pistas de tenis. Es algo objetivo. Cuantas más
+  pistas de tenis tenga un club, mejor será valorado.
+\item
+  Instalaciones: valoración en porcentaje personal. Viendo las
+  instalaciones que ofrecen cada club en sus páginas webs, les
+  proporciono una nota personal. La valoración será en porcentaje y la
+  querremos maximizar.
+\item
+  Ubicación y accesibilidad: tiempo de trayecto. Como hay clubes que se
+  pueden ir andando y otros que se tiene que ir en coche, voy a poner
+  una penalización al tiempo de ir en coche. Es decir, si es necesario
+  ir en coche, voy a añadirle al tiempo 5 mins más debido al
+  aparcamiento y como penalización en sí de tener que coger un vehículo.
+  El objetivo de este criterio será minimizarlo.
+\item
+  Precio: Cuota mensual (euros). El objetivo es minimizar el gasto
+  mensual.
+\item
+  Entrenamientos: valoración en porcentaje personal. Leyendo las
+  descripciones de los clubes en sus páginas webs y por experiencia
+  personal, voy a decidir una nota de lo que creo que van a ser los
+  entrenamientos. El objetivo va a ser maximizar este criterio, pues lo
+  ideal es que los entrenamientos sean intensos y competitivos.
+\end{itemize}
+
+Los de minimizar, los añadimos directamente con el menos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matrizDec }\OtherTok{=} \FunctionTok{multicriterio.crea.matrizdecision}\NormalTok{(}
+  \FunctionTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{4}\NormalTok{,  }\DecValTok{1}\NormalTok{,  }\DecValTok{50}\NormalTok{,  }\SpecialCharTok{{-}}\DecValTok{5}\NormalTok{,  }\SpecialCharTok{{-}}\DecValTok{45}\NormalTok{, }\DecValTok{60}\NormalTok{,}
+    \DecValTok{75}\NormalTok{,  }\DecValTok{3}\NormalTok{,  }\DecValTok{4}\NormalTok{,  }\DecValTok{60}\NormalTok{,  }\SpecialCharTok{{-}}\DecValTok{10}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{55}\NormalTok{, }\DecValTok{75}\NormalTok{,}
+    \DecValTok{50}\NormalTok{,  }\DecValTok{2}\NormalTok{,  }\DecValTok{16}\NormalTok{, }\DecValTok{90}\NormalTok{,  }\SpecialCharTok{{-}}\DecValTok{10}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{60}\NormalTok{, }\DecValTok{85}\NormalTok{,}
+    \DecValTok{25}\NormalTok{,  }\DecValTok{1}\NormalTok{,  }\DecValTok{6}\NormalTok{,  }\DecValTok{20}\NormalTok{,  }\SpecialCharTok{{-}}\DecValTok{20}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{70}\NormalTok{, }\DecValTok{100}\NormalTok{),}
+  \AttributeTok{numalternativas =} \DecValTok{4}\NormalTok{,}
+  \AttributeTok{numcriterios =} \DecValTok{7}\NormalTok{,}
+  \AttributeTok{v.nombresalt =} \FunctionTok{c}\NormalTok{(}\StringTok{"Mirador"}\NormalTok{,}\StringTok{"Bernier"}\NormalTok{,}\StringTok{"Río Grande"}\NormalTok{,}\StringTok{"Tenis Betis"}\NormalTok{),}
+  \AttributeTok{v.nombrescri =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Fam.\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Eventos\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Nº Pistas\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Instalaciones\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Ubicación\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Precio\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Entr.\textquotesingle{}}\NormalTok{)}
+\NormalTok{)}
+\NormalTok{matrizDec}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+            Fam. Eventos Nº Pistas Instalaciones Ubicación Precio Entr.
+Mirador      100       4         1            50        -5    -45    60
+Bernier       75       3         4            60       -10    -55    75
+Río Grande    50       2        16            90       -10    -60    85
+Tenis Betis   25       1         6            20       -20    -70   100
+\end{verbatim}
+
+Vamos a usar los pesos de los criterios que hemos obtenido con el AHP,
+para poder compararlos. Además, tiene sentido, pues yo soy la que le doy
+más importancia a uno o a otro criterio.
+
+Además, voy a usar para el test de discordancia los siguientes valores
+para las diferencias:
+
+\begin{itemize}
+\tightlist
+\item
+  Eventos deportivos: si hay una diferencia de 5 eventos, para mí esa
+  diferencia es demasiada y por lo tanto la voy a tener en cuenta.
+\item
+  Pistas: si hay una diferencia de 10 pistas. Se puede comprobar la
+  diferencia de dos clubes con el número de pistas de tenis que poseen.
+\item
+  Ubicación y accesibilidad: si hay una diferencia de 15 minutos de
+  trayecto. El tiempo es fundamental para mí. Una diferencia de más de
+  15 minutos supone grandes consecuencias para mi día.
+\item
+  Precio: si hay una diferencia mensual de 50 euros. Para mí el precio
+  no era un criterio muy importante pues más o menos los precios son
+  similares. Sin embargo, una diferencia de 50 euros sí es algo
+  excesivo.
+\end{itemize}
+
+Resolvemos electre con esta información:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{solElec }\OtherTok{=} \FunctionTok{multicriterio.metodoELECTRE\_I}\NormalTok{(}
+\NormalTok{  matrizDec,}
+  \AttributeTok{pesos.criterios =}\NormalTok{ crisub,}
+  \AttributeTok{nivel.concordancia.minimo.alpha =} \FloatTok{0.7}\NormalTok{,}
+  \AttributeTok{no.se.compensan =} \FunctionTok{c}\NormalTok{(}\ConstantTok{Inf}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\ConstantTok{Inf}\NormalTok{, }\DecValTok{15}\NormalTok{,}\DecValTok{50}\NormalTok{,}\ConstantTok{Inf}\NormalTok{),}
+  \AttributeTok{que.alternativas =} \ConstantTok{TRUE}
+\NormalTok{)}
+
+\CommentTok{\#solElec}
+
+\NormalTok{qgraph}\SpecialCharTok{::}\FunctionTok{qgraph}\NormalTok{(solElec}\SpecialCharTok{$}\NormalTok{relacion.dominante)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-19-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{solElec}\SpecialCharTok{$}\NormalTok{nucleo\_aprox}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Mirador Río Grande 
+         1          3 
+\end{verbatim}
+
+Viendo este grafo y viendo el núcleo obtenido, vamos a modificar el
+alpha para que nos quedemos solo con una alternativa. Es decir, ponemos
+más restrictivo el superar el test de concordancia.Y nos quedamos solo
+con las alternativas posibles: club Mirador y club Río Grande:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{solElec2 }\OtherTok{=} \FunctionTok{multicriterio.metodoELECTRE\_I}\NormalTok{(}
+\NormalTok{  matrizDec,}
+  \AttributeTok{pesos.criterios =}\NormalTok{ crisub,}
+  \AttributeTok{nivel.concordancia.minimo.alpha =} \FloatTok{0.55}\NormalTok{,}
+  \AttributeTok{no.se.compensan =} \FunctionTok{c}\NormalTok{(}\ConstantTok{Inf}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\ConstantTok{Inf}\NormalTok{, }\DecValTok{15}\NormalTok{,}\DecValTok{50}\NormalTok{,}\ConstantTok{Inf}\NormalTok{),}
+  \AttributeTok{que.alternativas =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{)}
+
+\CommentTok{\#solElec2}
+
+\NormalTok{qgraph}\SpecialCharTok{::}\FunctionTok{qgraph}\NormalTok{(solElec2}\SpecialCharTok{$}\NormalTok{relacion.dominante)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-20-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{solElec2}\SpecialCharTok{$}\NormalTok{nucleo\_aprox}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   Mirador Río Grande 
+         1          2 
+\end{verbatim}
+
+Puesto que todavía no hemos llegado a ninguna solución, vamos a
+modificar también el test de discordancia. Como en realidad no necesito
+tantas pistas de tenis y, además, siempre tengo la opción de alquilarla
+en cualquier otro lugar, voy a modificar esa restricción.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{solElec3 }\OtherTok{=} \FunctionTok{multicriterio.metodoELECTRE\_I}\NormalTok{(}
+\NormalTok{  matrizDec,}
+  \AttributeTok{pesos.criterios =}\NormalTok{ crisub,}
+  \AttributeTok{nivel.concordancia.minimo.alpha =} \FloatTok{0.55}\NormalTok{,}
+  \AttributeTok{no.se.compensan =} \FunctionTok{c}\NormalTok{(}\ConstantTok{Inf}\NormalTok{, }\DecValTok{5}\NormalTok{, }\ConstantTok{Inf}\NormalTok{, }\ConstantTok{Inf}\NormalTok{, }\DecValTok{15}\NormalTok{,}\DecValTok{50}\NormalTok{,}\ConstantTok{Inf}\NormalTok{),}
+  \AttributeTok{que.alternativas =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{)}
+
+\CommentTok{\#solElec3}
+
+\NormalTok{qgraph}\SpecialCharTok{::}\FunctionTok{qgraph}\NormalTok{(solElec3}\SpecialCharTok{$}\NormalTok{relacion.dominante)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-21-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{solElec3}\SpecialCharTok{$}\NormalTok{nucleo\_aprox}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Mirador 
+      1 
+\end{verbatim}
+
+CONCLUSIÓN:
+
+Según el procedimiento de Electre también llegamos a la misma
+conclusión: quedarnos con la alternativa del club Mirador. Con los datos
+que le he proporcionado, ha sido complicada la elección entre las
+alternativas de club Mirador y de club Río Grande. Sin embargo,
+cambiando un poco las restricciones de los test de concordancia y
+discordancia en función de nuestro criterio y lógica, hemos podido
+concluir y tomar una decisión.
+
+\pagebreak
+
+\subsubsection{Electre completo con
+tablas.}\label{electre-completo-con-tablas.}
+
+Por otro lado, si queremos ver los pasos intermedios y las tablas de
+concordancia y discordancia, lo detallo a continuación. (Detallo solo
+con las restricciones finales)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Electre con todos los pasos:}
+\CommentTok{\#completo = func\_ELECTRE\_Completo(solElec3)}
+
+\CommentTok{\#aquí las tablas de los índices:}
+\CommentTok{\#completo$MIndices$KE}
+
+\CommentTok{\#tabla del test de concordancia:}
+\CommentTok{\#completo$TConcordancia$KE}
+
+\CommentTok{\#tabla de discordancia:}
+\CommentTok{\#completo$TDiscordancia$KE}
+
+\CommentTok{\#tabla de superación de los dos test:}
+\CommentTok{\#completo$TSuperacion$KE}
+\end{Highlighting}
+\end{Shaded}
+
+Con estas tablas podemos comprobar que el par (a1,a3) supera ambos tests
+(el de concordancia y el de discordancia), pero que el par (a3,a1) no
+supera el test de concordancia. Por ello, la alternativa 1 (club
+Mirador) supera a la alternativa 3 (club Río Grande)
+
+\pagebreak
+
+\subsection{Resolución con Promethee con
+R.}\label{resoluciuxf3n-con-promethee-con-r.}
+
+\subsubsection{Promethee I}\label{promethee-i}
+
+A continuación voy a resolver el problema con la técnica de Promethee.
+Para ello, voy usar la misma matriz de decisión, los mismos pesos (para
+poder comparar y porque realmente muestran mis preferencias). Para las
+funciones de preferencia, voy a tomar una distinta en cada criterio.
+
+\begin{itemize}
+\tightlist
+\item
+  Familiaridad: preferencia lineal (q=5,p=30)
+\item
+  Eventos deportivos: cuasi criterio (q=0.5)
+\item
+  Nº Pistas: criterio con preferencia lineal y área de indiferencia
+  (q=2,p=8)
+\item
+  Instalaciones: criterio nivel (q=5,p=30)
+\item
+  Ubicación: criterio usual (p=8)
+\item
+  Precio: preferencia lineal (q=3,p=12)
+\item
+  Entrenamientos: cuasi criterio (q=1)
+\end{itemize}
+
+Las funciones de preferencias quedarían así:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#                  num fun  q    p   s}
+\NormalTok{tab.fpref }\OtherTok{=} \FunctionTok{matrix}\NormalTok{( }\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,    }\DecValTok{5}\NormalTok{,  }\DecValTok{30}\NormalTok{,  }\DecValTok{0}\NormalTok{,}
+                      \DecValTok{2}\NormalTok{,  }\FloatTok{0.5}\NormalTok{,   }\DecValTok{0}\NormalTok{,  }\DecValTok{0}\NormalTok{,}
+                      \DecValTok{5}\NormalTok{,    }\DecValTok{2}\NormalTok{,   }\DecValTok{8}\NormalTok{,  }\DecValTok{0}\NormalTok{,}
+                      \DecValTok{4}\NormalTok{,    }\DecValTok{5}\NormalTok{,  }\DecValTok{30}\NormalTok{,  }\DecValTok{0}\NormalTok{,}
+                      \DecValTok{1}\NormalTok{,    }\DecValTok{0}\NormalTok{,   }\DecValTok{8}\NormalTok{,  }\DecValTok{0}\NormalTok{,}
+                      \DecValTok{3}\NormalTok{,    }\DecValTok{3}\NormalTok{,  }\DecValTok{12}\NormalTok{,  }\DecValTok{0}\NormalTok{,}
+                      \DecValTok{2}\NormalTok{,    }\DecValTok{1}\NormalTok{,   }\DecValTok{0}\NormalTok{,  }\DecValTok{0}\NormalTok{),}\AttributeTok{ncol=}\DecValTok{4}\NormalTok{,}\AttributeTok{byrow=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Aplico Promethee I en primer lugar:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab.Pthee.i }\OtherTok{=} \FunctionTok{multicriterio.metodo.promethee\_i}\NormalTok{(matrizDec,crisub,tab.fpref)}
+\NormalTok{tab.Pthee.i}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$tabla.indices
+              Mirador   Bernier Río Grande Tenis Betis
+Mirador     0.0000000 0.6776375  0.7130000   0.7278187
+Bernier     0.2055229 0.0000000  0.2444791   0.7278187
+Río Grande  0.2870000 0.2870000  0.0000000   0.7813375
+Tenis Betis 0.2277406 0.1833000  0.1833000   0.0000000
+
+$vflujos.ent
+    Mirador     Bernier  Río Grande Tenis Betis 
+  2.1184562   1.1778208   1.3553375   0.5943406 
+
+$vflujos.sal
+    Mirador     Bernier  Río Grande Tenis Betis 
+  0.7202635   1.1479375   1.1407791   2.2369749 
+
+$tablarelacionsupera
+            Mirador Bernier Río Grande Tenis Betis
+Mirador         0.5     1.0        1.0         1.0
+Bernier         0.0     0.5        0.0         1.0
+Río Grande      0.0     1.0        0.5         1.0
+Tenis Betis     0.0     0.0        0.0         0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{require}\NormalTok{(qgraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Cargando paquete requerido: qgraph
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qgraph}\NormalTok{(tab.Pthee.i}\SpecialCharTok{$}\NormalTok{tablarelacionsupera)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-24-1.pdf}}
+
+Según los resultados del Promethee I, Mirador aparece como la
+alternativa con mayor capacidad de dominancia (mayor flujo entrante),
+seguida de Río Grande y Bernier, mientras que Tenis Betis resulta la
+menos preferida al presentar el menor flujo de entrada. En cuanto al
+flujo saliente (cuánto las alternativas son dominadas por las demás), la
+menor es club Mirador, seguido de Río Grande, Bernier y, por último,
+Tenis Betis. La matriz de relación de superación confirma que el club
+Mirador domina al resto de clubes, evidenciando una clara ventaja
+respecto a los criterios considerados.
+
+Casualmente ninguna es incomparable ni indiferente, pues los flujos
+entrantes y salientes están ordenados de la misma manera. Es decir, no
+existe ninguna alternativa que tenga mejor flujo entrante que otra, pero
+peor flujo saliente. Por lo que las conclusiones son mucho mejores. Las
+alernativas con Promethee I quedan ya perfectamente ordenadas.
+
+\pagebreak
+
+\subsubsection{Promethee II}\label{promethee-ii}
+
+Para terminar de confirmar nuestras hipótesis, vamos a realizar
+Promethee II y obtener el ranking final según los flujos netos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab.Pthee.ii }\OtherTok{=} \FunctionTok{multicriterio.metodo.promethee\_ii}\NormalTok{(matrizDec,crisub,tab.fpref)}
+
+\FunctionTok{require}\NormalTok{(qgraph)}
+\FunctionTok{qgraph}\NormalTok{(tab.Pthee.ii}\SpecialCharTok{$}\NormalTok{tablarelacionsupera)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-25-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#ordenacion final promethee 2:}
+\NormalTok{tab.Pthee.ii}\SpecialCharTok{$}\NormalTok{vflujos.netos}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+    Mirador     Bernier  Río Grande Tenis Betis 
+ 1.39819266  0.02988331  0.21455833 -1.64263430 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{order}\NormalTok{(tab.Pthee.ii}\SpecialCharTok{$}\NormalTok{vflujos.netos,}\AttributeTok{decreasing=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1 3 2 4
+\end{verbatim}
+
+CONCLUSIONES PROMETHEE:
+
+Como habíamos visto antes, la mejor alternativa según Promethee es el
+club Mirador, seguida por Río Grande, Bernier y, por último, Tenis
+Betis.
+
+Además, se puede comprobar la gran diferencia entre los distintos flujos
+netos, por lo que Promethee realiza una buena diferencia entre las
+distintas alternativas. También, cabe destacar que la única alternativa
+con flujo neto negativo es Tenis Betis, por lo que se puede decir que,
+en general, esta alternativa es más dominada de lo que ella domina.
+
+\pagebreak
+
+\subsection{Promethee Windows.}\label{promethee-windows.}
+
+Veamos en primer lugar el planteamiento del problema con Windows. Voy a
+usar la opción de poner los valores de los criterios de minimizar en
+positivo, pero especificando si quiero minimizar o maximizar los
+criterios.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\AttributeTok{res =} \FunctionTok{multicriterio.metodo.promethee\_windows}\NormalTok{(matrizDec,tab.fpref,crisub,}
+                                              \AttributeTok{fminmax =} \FunctionTok{c}\NormalTok{(}\StringTok{"max"}\NormalTok{,}\StringTok{"max"}\NormalTok{,}\StringTok{"max"}\NormalTok{,}\StringTok{"max"}\NormalTok{,}\StringTok{"min"}\NormalTok{,}\StringTok{"min"}\NormalTok{,}\StringTok{"max"}\NormalTok{) ))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$Escenario
+                       Criterio1     Criterio2     Criterio3    Criterio4   
+Min/Max                "max"         "max"         "max"        "max"       
+Pesos                  "0.17027518"  "0.08512482"  "0.08888127" "0.01481873"
+Funciones Preferencias "V-shape (3)" "U-shape (2)" "Linear (5)" "Level (4)" 
+Q: Indiferencia        "5"           "0.5"         "2"          "5"         
+P: Preferencia         "30"          "0"           "8"          "30"        
+S: Gausiano            "0"           "0"           "0"          "0"         
+Minimo                 "25"          "1"           "1"          "20"        
+Maximo                 "100"         "4"           "16"         "90"        
+Media                  "62.5"        "2.5"         "6.75"       "55"        
+Desviacion Tipica      "27.95"       "1.12"        "5.63"       "25"        
+Mirador                "100"         "4"           "1"          "50"        
+Bernier                "75"          "3"           "4"          "60"        
+Río Grande             "50"          "2"           "16"         "90"        
+Tenis Betis            "25"          "1"           "6"          "20"        
+                       Criterio5   Criterio6     Criterio7    
+Min/Max                "min"       "min"         "max"        
+Pesos                  "0.4157"    "0.0419"      "0.1833"     
+Funciones Preferencias "Usual (1)" "V-shape (3)" "U-shape (2)"
+Q: Indiferencia        "0"         "3"           "1"          
+P: Preferencia         "8"         "12"          "0"          
+S: Gausiano            "0"         "0"           "0"          
+Minimo                 "5"         "45"          "60"         
+Maximo                 "20"        "70"          "100"        
+Media                  "11.25"     "57.5"        "80"         
+Desviacion Tipica      "5.45"      "9.01"        "14.58"      
+Mirador                "5"         "45"          "60"         
+Bernier                "10"        "55"          "75"         
+Río Grande             "10"        "60"          "85"         
+Tenis Betis            "20"        "70"          "100"        
+
+$Acciones
+            Rango     Phi Phi.mas Phi.menos
+Mirador         1  0.4661  0.7062    0.2401
+Río Grande      2  0.0715  0.4518    0.3803
+Bernier         3  0.0100  0.3926    0.3826
+Tenis Betis     4 -0.5475  0.1981    0.7457
+\end{verbatim}
+
+Veamos los resultados:
+
+Aunque los flujos netos sean un poco distintos, se sigue manteniendo el
+mismo orden de preferencias de las alternativas. En primer lugar el club
+Mirador, con un flujo neto de 0.466, seguido de Río Grande (0.0715),
+Bernier (0.0100) y, por último, Tenis Betis (-0.5475). Siendo esta
+última, la única con flujo neto negativo otra vez. Además, vuelven a ser
+todas comparables y se puede volver a ver un orden de alternativas
+claro.
+
+\pagebreak
+
+\subsection{Método Axiomático de Arrow y
+Raymond}\label{muxe9todo-axiomuxe1tico-de-arrow-y-raymond}
+
+Por último, vamos a usar el método de Arrow y Raymond. Para este método,
+volvemos a usar la misma matriz de decisión:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{arrow }\OtherTok{=} \FunctionTok{multicriterio.metodoaxiomatico.ArrowRaymond}\NormalTok{(matrizDec)}
+\NormalTok{arrow}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+$pasos
+$pasos[[1]]
+$pasos[[1]]$Mclasificacion
+            Mirador Bernier Río Grande Tenis Betis
+Mirador          NA     4.0        4.0           5
+Bernier           3      NA        3.5           5
+Río Grande        3     3.5         NA           6
+Tenis Betis       2     2.0        1.0          NA
+
+$pasos[[1]]$max.filas
+    Mirador     Bernier  Río Grande Tenis Betis 
+          5           5           6           2 
+
+$pasos[[1]]$indices.ordenados
+[1] 4 1 2 3
+
+$pasos[[1]]$alternativa.sale
+[1] "Tenis Betis"
+
+
+$pasos[[2]]
+$pasos[[2]]$Mclasificacion
+           Mirador Bernier Río Grande
+Mirador         NA     4.0        4.0
+Bernier          3      NA        3.5
+Río Grande       3     3.5         NA
+
+$pasos[[2]]$max.filas
+   Mirador    Bernier Río Grande 
+       4.0        3.5        3.5 
+
+$pasos[[2]]$indices.ordenados
+[1] 2 3 1
+
+$pasos[[2]]$alternativa.sale
+[1] "Bernier"
+
+
+$pasos[[3]]
+$pasos[[3]]$Mclasificacion
+           Mirador Río Grande
+Mirador         NA          4
+Río Grande       3         NA
+
+$pasos[[3]]$max.filas
+   Mirador Río Grande 
+         4          3 
+
+$pasos[[3]]$indices.ordenados
+[1] 2 1
+
+$pasos[[3]]$alternativa.sale
+[1] "Río Grande"
+
+
+
+$alternativasordenadas
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+\end{verbatim}
+
+CONCLUSIONES
+
+Según el método de Arrow y Raymond, la mejor alternativa es el club
+Mirador, seguido del club Río Grande, Bernier y Tenis Betis.
+
+Además, podemos hacer el análisis de sensibilidad:
+
+\pagebreak
+
+\subsubsection{Análisis paramétrico o de sensibilidad aplicación Método
+axiomático de Arrow y
+Raymond}\label{anuxe1lisis-paramuxe9trico-o-de-sensibilidad-aplicaciuxf3n-muxe9todo-axiomuxe1tico-de-arrow-y-raymond}
+
+Vamos a ver cómo cambian los resultados finales si voy modificando las
+valoraciones de la primera alternativa en todos los criterios (haremos
+un bucle).
+
+Comenzamos inicialmente con la matriz de decisión usada durante todo el
+estudio.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{intalpha }\OtherTok{=} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\FloatTok{0.1}\NormalTok{)}
+\NormalTok{sols }\OtherTok{=} \FunctionTok{vector}\NormalTok{(}\StringTok{"list"}\NormalTok{,}\FunctionTok{length}\NormalTok{(intalpha))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(intalpha)) \{}
+\NormalTok{  pej7\_i }\OtherTok{=}\NormalTok{ matrizDec   }\CommentTok{\#vuelvo a copiar la matriz original}
+\NormalTok{  pej7\_i[}\DecValTok{1}\NormalTok{,] }\OtherTok{=}\NormalTok{ pej7\_i[}\DecValTok{1}\NormalTok{,] }\SpecialCharTok{*}\NormalTok{ intalpha[i]    }\CommentTok{\#modifico la fila 1}
+\NormalTok{  sej7\_i }\OtherTok{=} \FunctionTok{multicriterio.metodoaxiomatico.ArrowRaymond}\NormalTok{(pej7\_i)  }
+\NormalTok{  sols[[i]] }\OtherTok{=}\NormalTok{ sej7\_i}\SpecialCharTok{$}\NormalTok{alternativasordenadas    }\CommentTok{\#veo el resultado de cada matriz}
+\NormalTok{\}}
+\NormalTok{sols}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[[1]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[2]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[3]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[4]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[5]]
+[1] "Río Grande"  "Mirador"     "Bernier"     "Tenis Betis"
+
+[[6]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[7]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[8]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[9]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[10]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+
+[[11]]
+[1] "Mirador"     "Río Grande"  "Bernier"     "Tenis Betis"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#veamos las posiciones de a1 en este bucle:}
+\NormalTok{posiciones\_a1 }\OtherTok{=} \FunctionTok{rep}\NormalTok{(}\ConstantTok{NA}\NormalTok{,}\FunctionTok{length}\NormalTok{(intalpha))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(intalpha)) \{}
+  \CommentTok{\#i = 1}
+\NormalTok{  posiciones\_a1[i] }\OtherTok{=} \FunctionTok{which}\NormalTok{(sols[[i]]}\SpecialCharTok{==}\StringTok{"Mirador"}\NormalTok{)}
+\NormalTok{\}}
+\NormalTok{posiciones\_a1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1] 1 1 1 1 2 1 1 1 1 1 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#ha ido mejorando las posiciones: de 5 a 3}
+
+
+\CommentTok{\#lo representamos con un plot:}
+\FunctionTok{plot}\NormalTok{(intalpha,posiciones\_a1,}\AttributeTok{type=} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{Trabajo2_Reverte_Pagola_Angela_files/figure-pdf/unnamed-chunk-29-1.pdf}}
+
+CONCLUSIONES:
+
+Vemos que para todos los valores por los que se multiplica la fila 1
+(alternativa Mirador), la alternativa Mirador es la mejor, seguida de:
+Río Grande, Bernier y Tenis Betis. Sin embargo, hay una excepción,
+cuando la multiplico por 1,4. En esa iteración, club Mirador y club Río
+Grande cambian los papeles. Es algo curioso.
+
+\pagebreak
+
+\section{CONCLUSIÓN.}\label{conclusiuxf3n.}
+
+Vemos que en todos los métodos, la alternativa club Mirador es la mejor
+opción. Tiene sentido pues, con los pesos que se han obtenido con la
+tabla AHP, la ubicación y accesibilidad es el criterio con más peso,
+seguido de entrenamientos y familiaridad.
+
+El club Mirador es el mejor ubicado con respecto a mi casa y tiene un
+gran ambiente al ser un club pequeño y familiar.
+
+En segundo lugar, siempre aparece el club Río Grande, con excepción del
+método AHP (tercera posición), pero igualado prácticamente con el club
+Bernier. Por último, el club Tenis Betis siempre es el peor valorado.
+Tiene sentido, su principal característica son los entrenamientos, pero
+en todo lo demás siempre toma peores valores que las otras alternativas.
+
+Por lo tanto, tomaría la decisión de apuntarme al club Mirador.
+
+\pagebreak
+
+\section{BIBLIOGRAFÍA.}\label{bibliografuxeda.}
+
+Toda la información ha sido extraída de estas páginas webs y de mi
+experiencia personal (decisión personal que tuve que tomar).
+
+\begin{itemize}
+\tightlist
+\item
+  https://clubelmirador.com/inicio
+\item
+  https://escueladetenisfermingomez.es/
+\item
+  https://clubbernier.com/
+\item
+  https://riogrande.es/
+\item
+  https://www.tenisbetis.com/index.php?id=10
+\end{itemize}
+
+
+
+
+\end{document}
